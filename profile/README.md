@@ -1,10 +1,10 @@
-# Applied Engineering & Software Systems
+# TandemVector Labs
 
-**Independent software projects, practical engineering tools, and reproducible technical workflows.**
+**A shared engineering and software R&D collective — building reliable systems together.**
 
-This organization is a home for work at the intersection of software engineering, research tooling, desktop applications, connectivity, and responsible AI-assisted workflows. We prioritize **traceable changes, clear limitations, security-conscious design, and reproducible releases**.
+TandemVector Labs is a **jointly operated technical collective**, not the personal brand of either contributor. Our work connects developer tools, applied engineering, research workflows, secure desktop software, and connectivity systems. We prioritize **traceable changes, clear limitations, security-conscious design, and reproducible releases**.
 
-> **Current namespace:** `Usefull-Skills`. The GitHub organization name is not the name of a registered company. Project maturity and licensing are defined **per repository**, not by this profile.
+> **Brand:** TandemVector Labs · **Current GitHub namespace:** `Usefull-Skills`. A possible future handle change is not yet complete. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
 
 ## Explore the work
 
@@ -42,6 +42,10 @@ Their own licenses, credits, maturity, and upstream support policies remain auth
 
 The complete public project list, including legacy work and forks, is available at [the contributor's GitHub profile](https://github.com/GOD13emad?tab=repositories). **Private repositories are intentionally not listed.**
 
+## Joint stewardship
+
+This GitHub portfolio has two organization owners. The public organization identity is shared; individual projects retain their documented authorship and licensing. Governance and contribution standards are published in the [organization policy repository](https://github.com/Usefull-Skills/.github), including [Governance](https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md), [Security](https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md), and [Contributing](https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md).
+
 ## How we work
 
 - **Evidence before claims:** build success, runtime verification, user acceptance, and release qualification are distinct gates.
@@ -63,7 +67,7 @@ The complete public project list, including legacy work and forks, is available 
 
 این مجموعه برای معرفی و توسعه ابزارهای مهندسی، نرم‌افزارهای کاربردی و گردش‌کارهای فنیِ قابل بازتولید ایجاد شده است. هر پروژه مستندات، سطح بلوغ، شرایط مجوز و الزامات امنیتی مخصوص خود را دارد.
 
-شش پروژه عمومی در قالب **Fork** به سازمان اضافه شده‌اند. مخازن شخصی همچنان مرجع اصلی هستند و نسخه‌های Fork لزوماً همگام‌سازی خودکار، تنظیمات CI یا انتشارهای اصلی را ندارند. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
+هشت پروژه عمومی در قالب **Fork** به سازمان اضافه شده‌اند. مخازن شخصی همچنان مرجع اصلی هستند و نسخه‌های Fork لزوماً همگام‌سازی خودکار، تنظیمات CI یا انتشارهای اصلی را ندارند. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
 
 ## Independence and trademarks
 
