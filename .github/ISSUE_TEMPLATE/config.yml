@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security reporting
+    url: https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md
+    about: Do not post secrets or vulnerability details in public issues; use the private reporting route described here.
+  - name: Find the authoritative project
+    url: https://github.com/Usefull-Skills
+    about: Organization forks may redirect contributions to the linked upstream repository.
