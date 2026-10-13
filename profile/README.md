@@ -31,6 +31,15 @@ These are **GitHub forks inside this organization**. The personal repositories r
 
 **Important:** Forks preserve Git provenance but are not a full transfer of GitHub Issues, pull requests, releases, Wikis, repository settings, or CI secrets. Fork branches are not continuously synchronized by this profile; consult the upstream project for authoritative releases.
 
+### Legacy third-party fork lineage
+
+These are older **forks of third-party upstream projects**, not products originally authored by this organization:
+
+- [LTEMonitor in this organization](https://github.com/Usefull-Skills/LTEMonitor) ← [personal fork](https://github.com/GOD13emad/LTEMonitor) ← [original upstream](https://github.com/kruzer/LTEMonitor)
+- [WSAGAScript in this organization](https://github.com/Usefull-Skills/WSAGAScript) ← [personal fork](https://github.com/GOD13emad/WSAGAScript) ← [original upstream](https://github.com/WSA-Community/WSAGAScript)
+
+Their own licenses, credits, maturity, and upstream support policies remain authoritative. Presence in the organization does **not** imply active maintenance.
+
 The complete public project list, including legacy work and forks, is available at [the contributor's GitHub profile](https://github.com/GOD13emad?tab=repositories). **Private repositories are intentionally not listed.**
 
 ## How we work
