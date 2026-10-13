@@ -8,7 +8,7 @@ This organization is a home for work at the intersection of software engineering
 
 ## Explore the work
 
-### In this organization
+### Original project in this organization
 
 | Project | Focus | Status |
 | --- | --- | --- |
@@ -16,18 +16,20 @@ This organization is a home for work at the intersection of software engineering
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
-### Related public projects maintained in the contributor's personal account
+### Public forks of contributor-owned projects
 
-These repositories are **linked for discovery**. They are **not represented as having been transferred to this organization**.
+These are **GitHub forks inside this organization**. The personal repositories remain the **upstream sources**; they have not been transferred or deleted. The forked default-branch commit SHAs were checked against their upstream counterparts on 2026-10-14.
 
-| Project | Area |
-| --- | --- |
-| [ChatGPT Remote Commander](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Cross-platform MCP-based, permission-aware machine and project workflows |
-| [Direct Internet Method](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking application |
-| [FreeNet Hub](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tooling |
-| [Open Internet Gateway](https://github.com/GOD13emad/OpenInternetGateway) | Self-healing, cross-platform network gateway |
-| [Taskbar Monitor Enhanced](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar hardware and system monitoring |
-| [Persian Word Agent](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
+| Organization repository | Original upstream | Focus |
+| --- | --- | --- |
+| [ChatGPT Remote Commander](https://github.com/Usefull-Skills/ChatGPTRemoteCommander) | [Source](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Permission-aware Windows/Linux MCP and project workflows |
+| [Direct Internet Method](https://github.com/Usefull-Skills/DirectInternetMethod) | [Source](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking |
+| [FreeNet Hub](https://github.com/Usefull-Skills/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
+| [Open Internet Gateway](https://github.com/Usefull-Skills/OpenInternetGateway) | [Source](https://github.com/GOD13emad/OpenInternetGateway) | Cross-platform, self-healing network gateway |
+| [Taskbar Monitor Enhanced](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced) | [Source](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar and hardware monitoring |
+| [Persian Word Agent](https://github.com/Usefull-Skills/PersianWordAgent) | [Source](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
+
+**Important:** Forks preserve Git provenance but are not a full transfer of GitHub Issues, pull requests, releases, Wikis, repository settings, or CI secrets. Fork branches are not continuously synchronized by this profile; consult the upstream project for authoritative releases.
 
 The complete public project list, including legacy work and forks, is available at [the contributor's GitHub profile](https://github.com/GOD13emad?tab=repositories). **Private repositories are intentionally not listed.**
 
@@ -52,7 +54,7 @@ The complete public project list, including legacy work and forks, is available 
 
 این مجموعه برای معرفی و توسعه ابزارهای مهندسی، نرم‌افزارهای کاربردی و گردش‌کارهای فنیِ قابل بازتولید ایجاد شده است. هر پروژه مستندات، سطح بلوغ، شرایط مجوز و الزامات امنیتی مخصوص خود را دارد.
 
-پروژه‌های قرارگرفته در بخش «Related public projects» فعلاً در حساب شخصی توسعه‌دهنده هستند و درج پیوند به معنی انتقال یا تأیید انتشار نهایی آن‌ها نیست. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
+شش پروژه عمومی در قالب **Fork** به سازمان اضافه شده‌اند. مخازن شخصی همچنان مرجع اصلی هستند و نسخه‌های Fork لزوماً همگام‌سازی خودکار، تنظیمات CI یا انتشارهای اصلی را ندارند. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
 
 ## Independence and trademarks
 
