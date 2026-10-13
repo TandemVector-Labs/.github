@@ -8,6 +8,9 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 
 ## Explore the work
 
+Browse the [complete public project directory](https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
+
+
 ### Original project in this organization
 
 | Project | Focus | Status |
