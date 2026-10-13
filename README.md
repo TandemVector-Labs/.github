@@ -10,6 +10,8 @@ This repository powers the [TandemVector Labs organization profile](profile/READ
 - [Contributing](CONTRIBUTING.md) — reproducible bug reports and PRs
 - [Code of Conduct](CODE_OF_CONDUCT.md) — respectful technical collaboration
 - [Support](SUPPORT.md) — project-specific help and upstream routing
+- [Namespace migration](HANDLE_MIGRATION.md) — reviewed handle-change preflight, impacted links and rollback constraints
+- [Open organization gates](https://github.com/Usefull-Skills/.github/issues/1) — live checklist with evidence-backed acceptance status
 - [Issue templates](.github/ISSUE_TEMPLATE/) and [PR template](.github/PULL_REQUEST_TEMPLATE.md)
 
 GitHub inherits supported default community files from this public `.github` repository only when a target repository does not supply an overriding file. A policy written here is not proof that security settings, branch rules, or two-person approvals are enabled.
