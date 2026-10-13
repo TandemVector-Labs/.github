@@ -1,0 +1,45 @@
+name: Bug report
+description: Reproducible issue in a project actively maintained here
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For an organization fork, check whether issues belong in its upstream project.
+        Do not include secrets, tokens, authenticated browser state, or personal data.
+        Security vulnerabilities must be reported privately according to SECURITY.md.
+  - type: input
+    id: revision
+    attributes:
+      label: Project and exact version / commit SHA
+      placeholder: "repository, release/tag, or full commit SHA"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide a minimal, repeatable sequence.
+      placeholder: "1. ... 2. ... 3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and sanitized evidence
+      description: OS, architecture, dependencies, redacted logs, regression range.
+    validations:
+      required: false
