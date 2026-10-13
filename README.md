@@ -5,6 +5,7 @@ This repository powers the [TandemVector Labs organization profile](profile/READ
 ## Community standards
 
 - [Organization profile](profile/README.md) — projects, GitHub forks, attribution and maturity
+- [Public project directory](PROJECT_CATALOG.md) — source/fork provenance, official releases, issue routing and acceptance evidence
 - [Governance](GOVERNANCE.md) — joint stewardship, evidence-based decisions and preservation of upstream authority
 - [Security](SECURITY.md) — private vulnerability reporting and responsible disclosure
 - [Contributing](CONTRIBUTING.md) — reproducible bug reports and PRs
