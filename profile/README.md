@@ -12,7 +12,7 @@ This organization is a home for work at the intersection of software engineering
 
 | Project | Focus | Status |
 | --- | --- | --- |
-| **[Remote Commander Browser](https://github.com/Usefull-Skills/chatgpt-cef-linux)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
+| **[Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
