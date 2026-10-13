@@ -1,0 +1,54 @@
+# Public Fork Synchronization Control — TandemVector Labs
+
+**Audit date:** 2026-10-14  
+**Status:** PARTIAL / NOT CONTINUOUSLY SYNCHRONIZED  
+**Original source owner:** `GOD13emad`  
+**Organization owner/namespace:** `Usefull-Skills` (displayed brand: TandemVector Labs)
+
+This document records GitHub **read-only evidence and a safe synchronization rule**; it does not itself synchronize repositories, transfer Issues or create releases.
+
+## Verified default-branch snapshot
+
+| Public repository | Authoritative personal head | Organization-fork head | Gate |
+| --- | --- | --- | --- |
+| ChatGPTRemoteCommander | `6f52f93cbc04ba30354b35cd144ffc96aaa20aba` | same | SHA MATCH |
+| DirectInternetMethod | `26ef644117ea474b487186ce5e6e61e92cd02dd4` | same | SHA MATCH |
+| FreeNetHub | `f65da9c8ff2ca9e6207aecc3c7e67b6b935ee6eb` | `cab6139d32c149b08ef69bc60a0d58c3c18e6f14` | **OPEN — FORK BEHIND** |
+| OpenInternetGateway | `23f4fe514698102c7ecb735c7843fe25c594c8af` | same | SHA MATCH |
+| TaskbarMonitorEnhanced | `86db0d17c438a255a19dbcfb94c5942922712ecd` | same | SHA MATCH |
+| PersianWordAgent | `65aa3f85a9dccc23fcc19e26e4515ef7b5928697` | same | SHA MATCH |
+| LTEMonitor (master) | `646c05592c3497e94ec4aa576aa06c8c3c6f0edf` | same | SHA MATCH |
+| WSAGAScript | `99f034ef529aa39aa008e02befe8788cb9d86b46` | same | SHA MATCH |
+
+**Evidence:** GitHub REST `git/ref/heads/{main|master}` read-back on both owners; full 40-character SHA checked in the same audit.
+
+## FreeNetHub — critical sync delta
+
+GitHub compare using base `cab6139d32c149b08ef69bc60a0d58c3c18e6f14` and head `f65da9c8ff2ca9e6207aecc3c7e67b6b935ee6eb` returned **status=ahead, ahead_by=2, behind_by=0**, with two changed files:
+
+- `.github/workflows/ci.yml`: 51 removed lines (must verify CI gate semantics, not blindly assume equivalent coverage).
+- `PUBLIC_MANIFEST.json`: checksum/metadata changes (validate exact affected source and manifest consistency before accepting promotion).
+
+**Current source branch count: 2; fork branch count: 10.** The fork has eight additional historical branch refs that no longer exist in the personal repository. These must **not** be auto-deleted just to make counts equal. Classify each as historical retained evidence, superseded work, or unknown before any removal.
+
+**Allowed mutation:** one non-force, fast-forward-only update of `Usefull-Skills/FreeNetHub:main`, guarded by **exact** source/destination head SHA and compare status ahead/behind. STOP if either head changed or downstream branch protection/rules are incompatible. Re-read both 40-character heads and inspect exact-head CI + `PUBLIC_MANIFEST.json` after update. Preserve former fork commit as immutable Git history. Do not modify the personal source.
+
+**Current result:** no synchronization was performed in this audit. `FreeNetHub` parity remains OPEN.
+
+## Rules for all public forks
+
+1. The named personal upstream is the code/release authority unless a documented project decision promotes another source; do not silently switch remotes.
+2. Record source/target repository IDs and exact SHA before any branch change; an HTTP success code alone is insufficient.
+3. Synchronize only fast-forward-compatible branches. Never force push, blindly recreate unrelated tags, mirror-delete branches, squash history, or overwrite a divergent fork.
+4. Recheck complete branch/tag refs with pagination; compare names and SHAs. `main` equality alone is not complete Git ref parity.
+5. Preserve Issues, pull requests, Releases, Wiki, packages, CI environment and authentication boundaries: **GitHub Fork is not full GitHub service migration**.
+6. Do not label an untested downstream CI/release gate PASS based on upstream tests.
+7. Update the cumulative Project Brain and the [central acceptance issue](https://github.com/Usefull-Skills/.github/issues/1) after verified milestones.
+
+## Additional downstream gates
+
+- [TaskbarMonitorEnhanced fork native-GUI failure](https://github.com/GOD13emad/TaskbarMonitorEnhanced/issues/65): fork-hosted Windows lane A still fails physical UI acceptance despite upstream build PASS. Do not release-promote from failed fork tests.
+- [OpenInternetGateway npm advisory assessment](https://github.com/GOD13emad/OpenInternetGateway/issues/6): two build-toolchain transitive advisories need independent mitigation and acceptance; no fixed version was listed by GitHub advisories as of this audit.
+- GitHub App/CLI authorizations and organization owner 2FA must remain inside approved privilege boundaries.
+
+**Definition of Done:** an independently reproduced, read-back-confirmed ref parity snapshot; verified branch-rule continuity; no secrets/visibility changes; no deleted history; applicable exact-head CI/packaging regression acceptance; cumulative Brain updated. Until these pass, **FINAL=OPEN**.
