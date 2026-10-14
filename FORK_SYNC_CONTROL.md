@@ -1,3 +1,21 @@
+# R006 — Current public-fork reconciliation (2026-10-14)
+
+**New accepted state:** `Usefull-Skills/FreeNetHub:main` and `GOD13emad/FreeNetHub:main` now both point to `e41b3f669a894b1df5f0e84884eeb8600e747224` (exact 40-character GitHub API readback). The earlier R005 `f65da9c8...` head is **SUPERSEDED AS CURRENT**, retained below for lineage. The fork only advanced by two commits; GitHub compare returned `ahead_by=2`, `behind_by=0`, merge base equal to old fork `f65da9c8...`. No force push or branch/tag deletion occurred.
+
+**Mutation preflight and cause:** Repo ID `1418018228`, parent `GOD13emad/FreeNetHub`, exact two HEADs, non-fast-forward guard, source CI [38488479939](https://github.com/GOD13emad/FreeNetHub/actions/runs/38488479939) **10/10 jobs SUCCESS**, and zero in-progress target runs were checked before `gh repo sync Usefull-Skills/FreeNetHub --branch main`. The operation result delivery flagged a shell time boundary despite writing a `...SYNC_PASS` receipt; **independent direct GitHub source and fork HEAD readback** independently confirmed success. Do not rerun based on the transport timeout alone.
+
+**Change surface:** `.github/workflows/ci.yml` (+29), `PUBLIC_MANIFEST.json` (updated file hashes), `tests/test_lifecycle_safety.py` (+23), `windows/installer/FreeNetHub.iss` (+44). The installer change introduces a **fail-closed conflicting-install-root guard** to prevent silent split installation; the existing source CI was accepted before mirror advancement. No release/tag publication is implied.
+
+**Downstream exact-head acceptance:** New organization CI [38490448851](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38490448851) was `queued` on first post-sync check. **CI gate remains OPEN** until this exact-head run is `completed/success` and all jobs pass. Existing R005 CI [38487571483](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38487571483) is PASS for **its older exact SHA only**.
+
+**TaskbarMonitorEnhanced:** Fork divergence remains **intentional**: org `main=a24d2328f0b70780bd4ebbe25f29c6d3f44cf4a6`, upstream personal `main=86db0d17c438a255a19dbcfb94c5942922712ecd`; fork exact-head Windows native A/B CI PASS, original product remains separate. Upstream [PR #66](https://github.com/GOD13emad/TaskbarMonitorEnhanced/pull/66) is now `READY FOR REVIEW`, `OPEN`, `merged=false`, one CI test script changed. Upstream PR-hosted Build on exact head [38488705989](https://github.com/GOD13emad/TaskbarMonitorEnhanced/actions/runs/38488705989) PASS. **Do not auto-merge or re-release** without separately accepted upstream promotion gates.
+
+**Whole portfolio FINAL remains OPEN**: external Owner secure-2FA readiness, official organization-handle migration and API/package regression, member privileges, privately scoped repo transfer, GH Projects access, unpatched OIG toolchain advisories, cross-product release/owner acceptance. Public controls must not disclose private repository filenames, content, staging paths or personal account 2FA specifics.
+
+---
+
+## Prior R005/R004/R003 control snapshots — retained as evidence (CURRENT claims superseded above)
+
 ## R005.1 — Taskbar upstream review proposal (2026-10-14)
 
 **CURRENT:** Organization Fork R163 main CI remains PASS, and upstream personal [Draft PR #66](https://github.com/GOD13emad/TaskbarMonitorEnhanced/pull/66) was opened **without merging**. Exact PR base `86db0d17c438a255a19dbcfb94c5942922712ecd`, head `Usefull-Skills:main=a24d2328f0b70780bd4ebbe25f29c6d3f44cf4a6`; GitHub returned `draft=true`, `merged=false`, `changed_files=1` (`build/Test-Native-Presentation-R155.ps1`). No executable/installer release was changed. The separate **upstream review/CI/owner acceptance gate** is OPEN; personal main remains the reference for product releases. This is not permission to auto-merge a draft.
