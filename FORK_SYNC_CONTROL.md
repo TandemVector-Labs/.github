@@ -1,3 +1,19 @@
+# Current reconciliation — R004 (2026-10-14)
+
+**CURRENT / CONFIRMED:** Public-fork default branches have **7/8 exact upstream SHA parity** after reconciliation. The one exception is **intentional and tested fork-specific divergence** in TaskbarMonitorEnhanced, not an unsynchronized stale fork. Historic R003 snapshot below is preserved as provenance and is **SUPERSEDED FOR CURRENT STATUS**.
+
+- **FreeNetHub main Fast-forward: PASS.** Upstream and organization fork both point to `f65da9c8ff2ca9e6207aecc3c7e67b6b935ee6eb`. Exact prestate source `f65da9c8...`, fork `cab6139d...`, compare `ahead_by=2, behind_by=0`; `gh repo sync --branch main` succeeded without force; independent GitHub ref readback matched. The new `PUBLIC_MANIFEST.json` matches the updated CI file. The two commits removed a **legacy automatic Linux release-publication job** rather than adding automatic release behavior. No fork-only historical refs were deleted.
+- **FreeNetHub exact-head CI: OPEN/RUNNING** in [workflow run 38487571483](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38487571483). Initial job evidence: iOS static, Linux static, Android build, Windows fresh installer, console virtual E2E, Windows unit, and Windows virtual signing all SUCCESS; mobile iOS simulator and Android emulator acceptance jobs were still running at the last check. Do not call the whole CI PASS until the run completes with SUCCESS.
+- **TaskbarMonitorEnhanced fork-specific main acceptance: PASS.** Organization fork `main=a24d2328f0b70780bd4ebbe25f29c6d3f44cf4a6` is 3 commits ahead of personal upstream `main=86db0d17c438a255a19dbcfb94c5942922712ecd` by **intentional R163 diagnostic/paint-readiness changes**. Fork PR #1 merged; [main-head build 38485471888](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38485471888) and [native A+B acceptance 38485471910](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38485471910) both SUCCESS. [Upstream CI-specific Issue #65](https://github.com/GOD13emad/TaskbarMonitorEnhanced/issues/65) was closed with completion evidence. Preserve the original upstream release and the fork's validated changes; **DO NOT RESET/SYNC AWAY** this fork-specific delta without upstream promotion authority.
+- All other first-party and legacy public fork default branches were SHA-matched in the R004 readback. A default-head check is not exhaustive branch/tag parity, so continue per-ref verification when required.
+- Organization URL remains `Usefull-Skills`; displayed brand `TandemVector Labs`. Shared ownership, 2FA enforcement, private replication and rename acceptance are separate critical gates, not closed by code parity.
+
+**Accepted gate outcomes:** `FNH-FAST-FORWARD=PASS`, `TASKBAR-ORG-FORK-MAIN-CI=PASS`; `FNH-EXACT-HEAD-CI=OPEN`, `TASKBAR-PRODUCTION-RELEASE=OPEN`, `WHOLE-ORGANIZATION-FINAL=OPEN`. 
+
+---
+
+## R003 historical snapshot — SUPERSEDED FOR CURRENT STATUS (retained verbatim)
+
 # Public Fork Synchronization Control — TandemVector Labs
 
 **Audit date:** 2026-10-14  
