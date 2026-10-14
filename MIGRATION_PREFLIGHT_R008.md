@@ -1,5 +1,7 @@
 # TandemVector Labs — Organization Rename Preflight R008
 
+> **R010 CURRENT (2026-10-14): 14 organization repositories (11 public, 3 private).** Earlier R008 (12) and R009 (13) observations remain historical; they are superseded for any rename prestate. New original public repository `AppearanceStudio-Core` has `protected=false` on `main`; 10/11 public branches show protected=true. **No organization rename or protection change has been executed.** See R010 delta below.
+
 > **R009 current-state notice (2026-10-14):** This document retains the original R008 historical 12-repository preflight. The verified current count is **13 repositories (10 public / 3 private)**. The 12-repository references below are historical and MUST NOT be used as the current rename acceptance baseline. See the R009 delta at the end. The organization has **not** been renamed.
 
 **Status: REVIEW REQUIRED / NOT RENAMED**  
@@ -102,3 +104,23 @@ Official references: [Renaming an organization](https://docs.github.com/en/organ
 5. **OPEN:** separate peer review of this preflight PR. Merging the documentation does not perform or prove the rename.
 
 **No changes to branch protections, organization settings, account credentials, private visibility, publication, or releases were made by this R009 evidence update.** Code scanning findings and release-product acceptance are tracked separately and are not implied PASS by these infrastructure controls.
+
+---
+
+## R010 new public repository onboarding — 2026-10-14
+
+**Mutation objective:** update governance/namespace migration preflight after an independent public repo appeared; preserve R008/R009 historical evidence. Do not mistake documentation for policy enforcement.
+
+- Live authenticated `Usefull-Skills` listing: **14 repositories = 11 public + 3 private**. New public original (not a fork) [AppearanceStudio-Core](https://github.com/Usefull-Skills/AppearanceStudio-Core), GitHub repository numeric ID `1419340924`, created `2026-10-14T16:00:04Z`. Default `main` HEAD `8f56fe7f2ec16d1a563eae049ea6b6a1e6221382`. Public marketing/attribution is Appearance Studio Core / Arclenor Technologies; its published notice is all-rights-reserved with installation/use permission, not blanket open-source redistribution permission. No private repository identity is disclosed here.
+- Default branch `protected` readback for all 14: **10 of 11 public protected**, the new AppearanceStudio-Core public `main` is **unprotected**; all three private default branches are also `protected=false` (GitHub Free organization plan-gated for private branch protection/rulesets). AppearanceStudio-Core rulesets list `[]`; this is a real protection gap, not a CodeQL exploit finding. Public-rule action requires authenticated Repository Administration(write) / supported Owner UI. This GitHub connection has no ruleset-create action; no false PASS, manual direct API token escalation or substitute `CODEOWNERS`-only claim.
+- [AppearanceStudio-Core v0.9.0-rc1](https://github.com/Usefull-Skills/AppearanceStudio-Core/releases/tag/v0.9.0-rc1) is a **public prerelease**; git tag points to the same SHA as `main`. GitHub release asset `AppearanceStudio-Core-v0.9.0-rc1.zip` (42,451 bytes), SHA-256 `cfc28a4ba734eb7150e18895b10890d6d0ff60ac38a8825dd1938ba2cd12f4f0`. Independent Linux verification from this exact published asset: ZIP CRC PASS, no duplicate, symlink or path-escaping entries, all 27 manifest-declared files byte-size/SHA match, 16 Python AST files parse, zero unexpected files; included regression scripts `tests/test_engine_transaction.py` and `tests/test_system_monitor_model.py` both returned PASS in an isolated audit directory without running the installer or activating any desktop service. The manifest itself explicitly states `full_product_final=false`; this is distribution-integrity QA only, **not GNOME visual/soak or v1 product acceptance**.
+- Core's GitHub Actions CI success was observed on exact commit `8f56fe7f2ec16d1a563eae049ea6b6a1e6221382` (run [38594803171](https://github.com/Usefull-Skills/AppearanceStudio-Core/actions/runs/38594803171)). Existing eight public organization Forks remain separate from this new original repo; most recent FreeNetHub personal/organization `main` compared IDENTICAL at `03318fa00ba56d625f6178aed517fbaba65d55a4` with organization CI SUCCESS ([38600623571](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38600623571)).
+
+### Updated rename preflight / exact next actions
+
+1. **PASS:** 14-repository inventory (11 public, 3 private) at this timestamp and bounded public release-archive integrity. The older 12/13 counts are retained as history only.
+2. **OPEN:** protect the new public repository's default branch using an active ruleset restricting deletion and non-fast-forward updates with no unintended bypass; verify live `protected=true` and rule details. Current GitHub docs: [ruleset API requires Administration(write)](https://docs.github.com/en/rest/repos/rules#create-a-repository-ruleset); [GitHub Free public rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets).
+3. **OPEN:** org-wide 2FA enforcement, member privileges, three private repositories' protection plan decision, second-owner review, and an access-controlled 14-repo ID/head/visibility/integrations snapshot. Brand/provenance and current links for new AppearanceStudio-Core must be included before any namespace rename.
+4. **OPEN:** actual rename UI, post-rename project URLs/API, app integrations, releases, package references and private access regression. Original owner-approved stable assets and private repos remain untouched.
+
+**Change boundary:** documentation branch PR #2 only. No repo rules, user tokens, private visibility, product runtime, release, or organization handle changed by this update.
