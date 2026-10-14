@@ -1,3 +1,18 @@
+# R006.1 — Additional accepted CI and source/fork reconciliation (2026-10-14)
+
+**CURRENT public-code acceptance:** Exact HEADs of all **eight** organization public Forks match their corresponding personal-source default-branch commit SHA in direct GitHub ref readback. Their Git Tag name+target-SHA inventories match as checked across pages (104 Remote Commander, 16 DirectInternetMethod, 4 FreeNetHub, 22 OpenInternetGateway, 17 TaskbarMonitorEnhanced, 3 PersianWordAgent, 4 LTEMonitor, and zero WSAGAScript). Some historic Fork-only branches are intentionally preserved and **not** deleted; this does not claim complete equality of every branch, GitHub Issue, Release or package.
+
+- **FreeNetHub source + Fork current SHA:** `e41b3f669a894b1df5f0e84884eeb8600e747224`. Latest org [CI run 38490448851](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38490448851) ended `completed/success`; **10/10** job records independently returned SUCCESS, including Windows fresh installer, Android emulator, iOS simulator and virtual acceptance. **FNH FF+EXACT-HEAD-CI=PASS**. This supersedes the previously queued/running status in R006.
+- **Taskbar R163 test-only change upstream ADMITTED:** personal [PR #66](https://github.com/GOD13emad/TaskbarMonitorEnhanced/pull/66) merged at `c47ac360d46d1e5b57109598e4ae0251b81b2098`. Exactly one script file changed, no runtime or installer. Post-merge personal [Build 38490693011](https://github.com/GOD13emad/TaskbarMonitorEnhanced/actions/runs/38490693011) SUCCESS (1/1 job) and [native A+B 38490692925](https://github.com/GOD13emad/TaskbarMonitorEnhanced/actions/runs/38490692925) SUCCESS (3/3 jobs). The organization Fork then fast-forwarded `main` from `a24d2328...` to `c47ac360...` after exact ID, ancestry (ahead=1, behind=0), 0 changed-file comparison and source-CI preflight; independent GitHub post-readback matched both HEADs. **TASKBAR UPSTREAM ADOPTION=PASS; FORK GIT PARITY=PASS**.
+- **Taskbar Fork exact-new-HEAD CI** [Build 38491119700](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38491119700) and [native A+B 38491119757](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38491119757) were `in_progress` on last check, so **FORK POST-SYNC CI=OPEN** until completed success and job readback. Earlier fork runs for pre-merge `a24d2328...` remain valid for that older exact head, not this merge SHA.
+- No tags, releases, original projects, branches or private files were deleted or made public. **Product-final / user-device acceptance remains a separate OPEN gate**, even when CI passes.
+
+**Still OPEN outside safe automation:** both owner accounts ready for organization 2FA enforcement; handle migration `Usefull-Skills` → `TandemVector-Labs` by official GitHub Owner UI and URL/API/Packages verification; Member privileges settings; private source consent and paid-plan branch controls; Projects `read:project` scope; two OIG build-toolchain security advisories without listed fixed versions; owner acceptance. Percentage of whole-portfolio completion UNPROVEN.
+
+---
+
+## Earlier R006/R005 control snapshots — preserved unchanged below
+
 # R006 — Current public-fork reconciliation (2026-10-14)
 
 **New accepted state:** `Usefull-Skills/FreeNetHub:main` and `GOD13emad/FreeNetHub:main` now both point to `e41b3f669a894b1df5f0e84884eeb8600e747224` (exact 40-character GitHub API readback). The earlier R005 `f65da9c8...` head is **SUPERSEDED AS CURRENT**, retained below for lineage. The fork only advanced by two commits; GitHub compare returned `ahead_by=2`, `behind_by=0`, merge base equal to old fork `f65da9c8...`. No force push or branch/tag deletion occurred.
