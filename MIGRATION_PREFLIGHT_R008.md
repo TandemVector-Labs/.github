@@ -1,5 +1,7 @@
 # TandemVector Labs — Organization Rename Preflight R008
 
+> **R009 current-state notice (2026-10-14):** This document retains the original R008 historical 12-repository preflight. The verified current count is **13 repositories (10 public / 3 private)**. The 12-repository references below are historical and MUST NOT be used as the current rename acceptance baseline. See the R009 delta at the end. The organization has **not** been renamed.
+
 **Status: REVIEW REQUIRED / NOT RENAMED**  
 **Current handle:** `Usefull-Skills`  
 **Proposed handle:** `TandemVector-Labs` (the actual GitHub rename form must reconfirm availability)  
@@ -62,3 +64,41 @@ The original organization browser repository has **10 GitHub Release objects** i
 **Acceptance gate: OPEN until real UI rename + all poststate and integration checks PASS.** A Pull Request that approves this plan is not authorization to claim the rename completed.
 
 Official references: [Renaming an organization](https://docs.github.com/en/organizations/managing-organization-settings/renaming-an-organization), [2FA requirements](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization), [Member privileges](https://docs.github.com/en/organizations/managing-organization-settings/setting-permissions-for-deleting-or-transferring-repositories).
+
+---
+
+## R009 verified continuation — 2026-10-14
+
+**Mutation objective:** correct the stale organization rename baseline without changing organization/repository settings, private visibility, release state or Git history. R008 evidence and 12-repository snapshot are retained above for chronology; this delta is authoritative for current pre-rename inventory.
+
+### Live prestate and evidence
+
+- Organization handle remains `Usefull-Skills`; the proposed `TandemVector-Labs` rename is **NOT executed**.
+- **13 repositories total: 10 public + 3 private**, from the authenticated organization repository listing. Do **not** place private repository identifiers or contents in this public document. The fresh 13-item confidential ID/visibility/ref snapshot and Owner/2FA readback remain an **OPEN access-controlled gate**.
+- Both linked GitHub accounts `GOD13emad` and `mohammadmohammadzadeh19960-code` authenticated. Repo-level `admin` access for each was confirmed on the private security tracker, and for the second account on the organization Browser. These permission checks do **NOT** replace organization-wide Owner/recovery, 2FA enforcement or Member privilege readbacks.
+- **All eight public personal-source Fork default branches are IDENTICAL to upstream at this timestamp:** comparison returned `status=identical`, `ahead=0`, `behind=0`, with the exact upstream and fork HEAD matching. This confirms parity only for the specified default branches, not Issues, releases, tags or other refs:
+
+| Public organization Fork | Branch | Verified identical upstream/fork HEAD |
+| --- | --- | --- |
+| OpenInternetGateway | main | `4c34996ef615afa7b515ac0f84e6a18b9ddcb5cf` |
+| TaskbarMonitorEnhanced | main | `03e70785529354f741d75449a19d7e2538c2b81d` |
+| PersianWordAgent | main | `65aa3f85a9dccc23fcc19e26e4515ef7b5928697` |
+| DirectInternetMethod | main | `26ef644117ea474b487186ce5e6e61e92cd02dd4` |
+| FreeNetHub | main | `e4112be36d6cce97863c59a5dbe6a5d0bcdf5786` |
+| ChatGPTRemoteCommander | main | `bd4f868d3c07e95965a8e249f5191fb16902406c` |
+| LTEMonitor | master | `646c05592c3497e94ec4aa576aa06c8c3c6f0edf` |
+| WSAGAScript | main | `99f034ef529aa39aa008e02befe8788cb9d86b46` |
+
+- The public `.github` governance repository and the **eight public forks** each have an active default-branch ruleset that blocks deletion and non-fast-forward changes (9 repos, 9 such rulesets). The governance repo additionally has an active CODEOWNERS/one-review PR ruleset, with no bypass actors. Its independent-review gate remains **OPEN** until an actual eligible reviewer submits approval.
+- The original organization Browser has **no repository ruleset returned** by the rulesets listing. Its separate branch-protection REST read returned **403** via the installed integration; do not infer that it has no protection. On three private repositories, the rulesets listing returned GitHub's **403 plan restriction**; do not infer either rule presence or absence from that error.
+- The public source for this migration behavior is GitHub's official [Renaming an organization](https://docs.github.com/en/organizations/managing-organization-settings/renaming-an-organization) documentation: old profile URLs and API paths are **not** redirected; repository URL redirection is conditional and should be verified. The old handle becomes available for another user to claim. No automatic rename-back is safe.
+
+### Updated gates / exact next action
+
+1. **PASS at this snapshot:** public default-branch Fork parity (8/8) and the 9 observed public default-branch delete/non-FF rulesets. Recheck immediately before any rename; snapshots are not permanent synchronization.
+2. **OPEN:** each Owner validates working 2FA and recovery; verify and enforce the organization-level requirement via official Owner settings; re-read actual poststate. Do not expose recovery codes.
+3. **OPEN:** official Organization Member privileges for repository deletion/transfer and visibility changes; read back actual persisted controls.
+4. **OPEN:** access-controlled 13-repository identity/visibility/HEAD export and private repo protection alternatives; release, tags, packages, Projects, API client and App installation inventory; jointly approved rename plan and post-rename rollback/contingency.
+5. **OPEN:** separate peer review of this preflight PR. Merging the documentation does not perform or prove the rename.
+
+**No changes to branch protections, organization settings, account credentials, private visibility, publication, or releases were made by this R009 evidence update.** Code scanning findings and release-product acceptance are tracked separately and are not implied PASS by these infrastructure controls.
