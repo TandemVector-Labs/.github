@@ -1,3 +1,16 @@
+# R006.2 — Terminal exact-head verification (2026-10-14)
+
+**Current accepted public-fork Git/CI milestone: PASS.** All **eight** publicly forked repository default branch SHA values match personal upstream (direct GitHub ref readback at this snapshot), and all existing Git Tag name/target SHA entries match in paginated checks; intentional historical fork-only branches are **preserved**, not deleted.
+
+- **FreeNetHub:** org and personal `main=e41b3f669a894b1df5f0e84884eeb8600e747224`; org [CI 38490448851](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38490448851) `completed/success`, 10/10 jobs PASS.
+- **TaskbarMonitorEnhanced:** org and personal `main=c47ac360d46d1e5b57109598e4ae0251b81b2098`; personal upstream [PR #66](https://github.com/GOD13emad/TaskbarMonitorEnhanced/pull/66) MERGED with one CI-only test file. Source main [Build 38490693011](https://github.com/GOD13emad/TaskbarMonitorEnhanced/actions/runs/38490693011) 1/1 PASS and [Native 38490692925](https://github.com/GOD13emad/TaskbarMonitorEnhanced/actions/runs/38490692925) 3/3 PASS. Organization fork also fast-forwarded safely with zero changed files in ancestry comparison, then its exact-head [Build 38491119700](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38491119700) 1/1 PASS and [Native 38491119757](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/actions/runs/38491119757) 3/3 PASS. The previously in-progress fork-CI state is **SUPERSEDED**.
+- **Scope**: These are verified Git ref / hosted CI gates; they do **not** certify physical owner-device deployment, production code-signing, stable Release publication, private repository migration, Projects service-data parity, vulnerability-free applications, or organizational FINAL.
+- **Remaining external gates**: both owner accounts ready for org-wide 2FA enforcement, GitHub Owner UI handle rename and downstream URLs/API/packages, paid-plan private rules/secret-scanning options, member privileges settings, authorization for private personal repo transfers, GH Projects scope and unresolved OIG advisories.
+
+---
+
+## Prior R006.1/R006/R005 control snapshots — preserved unchanged below
+
 # R006.1 — Additional accepted CI and source/fork reconciliation (2026-10-14)
 
 **CURRENT public-code acceptance:** Exact HEADs of all **eight** organization public Forks match their corresponding personal-source default-branch commit SHA in direct GitHub ref readback. Their Git Tag name+target-SHA inventories match as checked across pages (104 Remote Commander, 16 DirectInternetMethod, 4 FreeNetHub, 22 OpenInternetGateway, 17 TaskbarMonitorEnhanced, 3 PersianWordAgent, 4 LTEMonitor, and zero WSAGAScript). Some historic Fork-only branches are intentionally preserved and **not** deleted; this does not claim complete equality of every branch, GitHub Issue, Release or package.
