@@ -1,3 +1,17 @@
+# R005 acceptance delta — 2026-10-14
+
+**CURRENT: FreeNetHub Fork sync + exact-head CI = PASS.** The previously OPEN/RUNNING FreeNetHub CI gate documented in the R004 section below has now completed and is **SUPERSEDED FOR CURRENT STATUS**.
+
+- GitHub [run 38487571483](https://github.com/Usefull-Skills/FreeNetHub/actions/runs/38487571483) finished `status=completed, conclusion=success` at exact organization-fork `main=f65da9c8ff2ca9e6207aecc3c7e67b6b935ee6eb`. Independent GitHub Jobs readback: **10/10 SUCCESS** (`ios-static`, `linux-static`, `android-build`, `windows-installer-fresh`, `console-virtual-e2e`, `windows-unit`, `windows-virtual-signing`, `ios-simulator-runtime`, `android-emulator-runtime`, `virtual-acceptance`); none failed.
+- Main source and organization-fork ref reads match at full SHA `f65da9c8ff2ca9e6207aecc3c7e67b6b935ee6eb`. The change was fast-forward-only and removed a legacy automatic Linux release-publisher job; no forced push, branch/tag deletion or release publication occurred.
+- **Scope of PASS:** Git mirror target main-head parity and exact-head hosted GitHub Actions regression; **not** evidence of production installation/owner acceptance, a signed public stable release, or all historical branch/tag service-data parity.
+- **TaskbarMonitorEnhanced:** Fork-only PR1 main R163 and exact-head native A+B CI remain ACCEPTED/PASS (see prior R004 delta); personal upstream deliberately remains separate.
+- **Remaining critical gates:** two-owner secure 2FA and org enforcement; official handle rename/URL/API/package regression; member privileges/review requirement; consented private-repository scope; GitHub Projects read scope; two unpatched OIG dev-chain GHSA risks and release/owner validation. **Portfolio FINAL remains OPEN.**
+
+---
+
+## R004 previous acceptance snapshot — superseded only where explicitly noted
+
 # Current reconciliation — R004 (2026-10-14)
 
 **CURRENT / CONFIRMED:** Public-fork default branches have **7/8 exact upstream SHA parity** after reconciliation. The one exception is **intentional and tested fork-specific divergence** in TaskbarMonitorEnhanced, not an unsynchronized stale fork. Historic R003 snapshot below is preserved as provenance and is **SUPERSEDED FOR CURRENT STATUS**.
