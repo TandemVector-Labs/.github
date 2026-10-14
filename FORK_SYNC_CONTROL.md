@@ -1,3 +1,7 @@
+## R005.1 — Taskbar upstream review proposal (2026-10-14)
+
+**CURRENT:** Organization Fork R163 main CI remains PASS, and upstream personal [Draft PR #66](https://github.com/GOD13emad/TaskbarMonitorEnhanced/pull/66) was opened **without merging**. Exact PR base `86db0d17c438a255a19dbcfb94c5942922712ecd`, head `Usefull-Skills:main=a24d2328f0b70780bd4ebbe25f29c6d3f44cf4a6`; GitHub returned `draft=true`, `merged=false`, `changed_files=1` (`build/Test-Native-Presentation-R155.ps1`). No executable/installer release was changed. The separate **upstream review/CI/owner acceptance gate** is OPEN; personal main remains the reference for product releases. This is not permission to auto-merge a draft.
+
 # R005 acceptance delta — 2026-10-14
 
 **CURRENT: FreeNetHub Fork sync + exact-head CI = PASS.** The previously OPEN/RUNNING FreeNetHub CI gate documented in the R004 section below has now completed and is **SUPERSEDED FOR CURRENT STATUS**.
