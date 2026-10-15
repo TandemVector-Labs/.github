@@ -1,5 +1,26 @@
 # TandemVector Labs — Organization Rename Preflight R008
 
+> **R040 CURRENT verified state (2026-10-15): This checkpoint supersedes every older R008/R009/R010 assertion labeled CURRENT, including historical unchecked 2FA/member-privilege/branch-protection boxes below.** Organization identity remains `Usefull-Skills` ID `334108004`; **no handle rename has happened**. Read this section and the live central issue before any consequential rename action.
+
+## R040 — Current pre-rename acceptance (2026-10-15)
+
+**Verified directly from authenticated Owner GitHub REST and current branch reads:**
+- **Identity/access:** `Usefull-Skills`, stable numeric org ID `334108004`; 14 repositories (**11 public / 3 private**). Both `GOD13emad` and `mohammadmohammadzadeh19960-code` have `state=active`, role `admin` (Owner). They share org-wide administration, including private organization repositories. Separately the partner now has effective `write` on all **8/8** project public personal-origin repositories; all corresponding invitations have been accepted. This does not create dual personal-account ownership.
+- **Org-wide access controls currently PASS:** `two_factor_requirement_enabled=true`, `members_can_delete_repositories=false`, `members_can_change_repo_visibility=false`, `members_can_create_repositories=false`, creation type `none`. Both individual 2FA **recovery methods** are still unverified; do not store recovery codes in any repository.
+- **Branch controls:** **11/11 public** organization default branches returned `protected=true`; the added first-party public `AppearanceStudio-Core/main` (commit `8f56fe7f2ec16d1a563eae049ea6b6a1e6221382`) is **now protected** by active repository ruleset `25137480` (deletion + non-fast-forward, no bypass). Existing `.github` governance rulesets also active. **0/3 private** default branches are protected under current plan; this is an OPEN risk/plan decision, not a reason to make them public.
+- **Git continuity:** eight first-party/legacy public Fork HEADs have been reconciled at accepted checkpoints; commits can change and MUST be reread immediately before a rename. Source/main SHA parity never implies Issues, Releases, Packages, Apps or credentials are mirrored.
+
+**Still OPEN before renaming (do not interpret historical checkboxes as new action items):**
+1. Obtain actual second-Owner independent review of [this migration PR #2](https://github.com/Usefull-Skills/.github/pull/2), and reconcile the overlapping `PROJECT_CATALOG.md` edits with [joint-development routing PR #3](https://github.com/Usefull-Skills/.github/pull/3). [Two-way promotion protocol PR #4](https://github.com/Usefull-Skills/.github/pull/4) is also unmerged; development in the organization and release authority at the personal parents must remain coherent.
+2. Confirm both Owners' recovery readiness without collecting/revealing secrets, and decide how to handle three private branch protections without changing their visibility. Preserve both active Owner accounts.
+3. Create and independently verify a **restricted** current 14-repository identity/visibility/default-SHA + integrations inventory; do not publish private repository names/paths/metadata in this public PR. Original R008 Project Brain archive provenance is incomplete.
+4. Inspect live GitHub Apps/webhooks, API paths, Pages, Projects, packages/GHCR and installed-client release/updater links with supported permissions; missing integration scope is UNVERIFIED, not PASS.
+5. Reconfirm availability of intended `TandemVector-Labs` login through an authenticated Owner interface, obtain both-Owner acceptance of the rename/maintenance window and irreversible URL implications, then execute only through supported organization settings. Read back identical numeric org ID, all repository IDs, both Owner roles, protected refs, private visibility, Git transport/API paths and release integrations. If poststate cannot be proven, STOP; rename-back cannot be assumed safe.
+
+**Acceptance state:** governance controls + public branch protection PASS in the bounded current snapshot; confidential/private branch protection decision, two-owner review, recovery readiness, integration inventory, actual rename and post-rename regression **OPEN**. Whole project **NOT FINAL**. Historical R008/R009/R010 sections remain below as provenance, not current operational instructions.
+
+---
+
 > **R010 CURRENT (2026-10-14): 14 organization repositories (11 public, 3 private).** Earlier R008 (12) and R009 (13) observations remain historical; they are superseded for any rename prestate. New original public repository `AppearanceStudio-Core` has `protected=false` on `main`; 10/11 public branches show protected=true. **No organization rename or protection change has been executed.** See R010 delta below.
 
 > **R009 current-state notice (2026-10-14):** This document retains the original R008 historical 12-repository preflight. The verified current count is **13 repositories (10 public / 3 private)**. The 12-repository references below are historical and MUST NOT be used as the current rename acceptance baseline. See the R009 delta at the end. The organization has **not** been renamed.
