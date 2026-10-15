@@ -1,3 +1,36 @@
+# R039 — Current two-direction fork promotion (2026-10-15)
+
+**Proposed / REVIEW REQUIRED — not effective until merged by authorized human Owners.** This section closes the missing *joint-organization development → original personal release repository* direction. All historical R006 snapshots below remain evidence, not perpetual SHA or product acceptance. No live repository, release, tag, CI secret, or private data was changed by this proposal.
+
+## Scope and invariants
+
+- Applies only to six first-party public GitHub fork pairs: `OpenInternetGateway`, `ChatGPTRemoteCommander`, `DirectInternetMethod`, `FreeNetHub`, `TaskbarMonitorEnhanced` and `PersianWordAgent`; organization owner `Usefull-Skills`, personal parent `GOD13emad`. The two legacy third-party fork chains and personal private repositories are **excluded**. Check exact `fork=true`, `parent.full_name`, numeric repository IDs and visibility before every transfer.
+- Organization forks are the **proposed** joint PR/new issue home in [governance PR #3](https://github.com/Usefull-Skills/.github/pull/3); personal parents remain existing published-release/updater authorities. Treat those as different roles until a separately reviewed migration occurs.
+- Keep both active Owners' administration, protections, original branches/commits, private visibility, signatures and review rights. No force push, reset, squash/cherry-pick into a source whose ancestry must remain reconcilable, auto-release, or substitution of automated technical review for a genuine independent Owner approval.
+
+## A. Organization-developed code promoted to the personal release source
+
+1. **Snapshot live refs:** independently fetch personal `main` SHA `S0`, organization `main` SHA `O0`, merge-base/ancestry, open PRs and checks. Verify this is the intended fork network and no unreviewed divergence already exists. Do not use historic snapshots as a write lease.
+2. **Approve organization development first:** land changes by reviewable PR into organization `main` only after exact-head CI/CodeQL/appropriate regression and a separate, eligible *human* Owner review. Let the resulting accepted organization head be `O1`. `O1` is source-code acceptance, **not** personal stable release acceptance.
+3. **Promote via a cross-fork upstream PR:** base `GOD13emad/<repo>:main`, head the accepted `Usefull-Skills/<repo>:main` at `O1` (or a pinned source-equivalent immutable branch). Re-read personal head `S1`, perform source-specific tests, integration checks, and independent review. A normal **merge commit** in the personal parent preserves the exact `O1` ancestor while accepting any concurrent parent-only commits. A true fast-forward may also preserve ancestry where allowed. If source policy enforces linear history, **STOP** for a separately approved reconciliation plan; never assume a squash/rebase can preserve the original `O1` commit identity.
+4. **Enforce the ancestry gate before returning to the organization:** after upstream acceptance, let personal protected `main` be `S2`. Verify `O1` is still the organization branch head, `O1` is an ancestor of `S2` (`git merge-base --is-ancestor O1 S2`), and exact-source-HEAD checks passed. If any condition fails, leave refs untouched and reconcile another reviewed PR. Equivalent file content without this ancestry condition does **not** justify blind fast-forward.
+5. **Safely reconcile:** update organization `main` from expected old SHA `O1` to `S2` with `force=false` and an exact-old-SHA compare-and-swap. Independently re-read both SHAs and branch protection, preserve other branches and service data, and require an appropriate **organization** exact-HEAD CI conclusion (no triggered run = UNVERIFIED, not PASS). Do not publish an asset or tag from this sync.
+6. **Release independently:** only the personal-parent publishing/updater process can release until release URLs and product-specific acceptance have separately passed both-Owner review. Validate installer provenance, signed assets if required, real deployment/rollback, security findings and immutable version identity as applicable.
+
+## B. Personal-source changes with no unpromoted organization changes
+
+- Verify current parent/fork refs are the correct intended pair. If org head is an ancestor of parent head, parent advanced cleanly and the fork has no new unreviewed commits, apply only a guarded non-force expected-old-SHA fast-forward to the fork and re-check source/target SHAs and exact-head CI.
+- If org is ahead, both branches advanced, protection changed, the source PR is not approved, or ancestry is ambiguous, **do not synchronize or reset**. Instead resolve the org changes with path A and a human-reviewed Git merge/PR. Never use `gh repo sync --force` to make the numbers match.
+
+## Reproducible algorithm evidence and limitations
+
+- A separate throwaway local Git fixture (2026-10-15) simulated `O1` (organization work), concurrent `S1` (personal work), an ancestry-preserving merge to `S2` and a clean org `--ff-only` update to the same `S2` SHA: **PASS**. A copy-equivalent personal squash branch deliberately failed `merge-base --is-ancestor O1` as expected. No user source repository was modified by that fixture.
+- On 2026-10-15 the six paired org forks had `has_issues=true`, verified parents and matching protected default-head SHAs at the cited checkpoint. Parity is a snapshot, not continuous background mirroring. Human reviews, source release gates and current poststate remain OPEN unless independently evidenced.
+- Primary docs: [fork-origin PR](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork); [merge commit vs squash/rebase](https://docs.github.com/en/pull-requests/reference/pull-request-merges); [sync a fork](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/syncing-a-fork).
+
+---
+
+## Historical source-to-organization snapshots (R006 and earlier; not current release approval)
 # R006.2 — Terminal exact-head verification (2026-10-14)
 
 **Current accepted public-fork Git/CI milestone: PASS.** All **eight** publicly forked repository default branch SHA values match personal upstream (direct GitHub ref readback at this snapshot), and all existing Git Tag name/target SHA entries match in paginated checks; intentional historical fork-only branches are **preserved**, not deleted.
