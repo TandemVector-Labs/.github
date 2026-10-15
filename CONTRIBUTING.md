@@ -4,7 +4,7 @@ Thank you for helping improve an engineering or software project in this organiz
 
 ## Choose the authoritative repository
 
-Every repository has its own status, license, support policy, and release process. Several repositories here are **forks** of publicly accessible personal or third-party projects; they are not automatically the authoritative development repositories. When contributing to a fork, follow the linked **upstream** repository unless a maintainer has explicitly designated the organization fork as the active development location.
+Every repository has its own status, license, support policy, and release process. Two GitHub forks are explicitly designated as the **joint development and new issue home** for both Owners: [OpenInternetGateway](https://github.com/Usefull-Skills/OpenInternetGateway) and [ChatGPTRemoteCommander](https://github.com/Usefull-Skills/ChatGPTRemoteCommander). Submit new development PRs and new reports to these organization repositories. Their personal GitHub parents still own the existing release/update channels and older issues; they have **not** been transferred. Other personal or third-party forks follow their specific upstream contribution policies. See [Shared development home](COLLABORATION_HOME.md).
 
 Read the destination repository's README, existing contribution guidance, security policy and build instructions. **Repository-specific policies override this default.**
 
