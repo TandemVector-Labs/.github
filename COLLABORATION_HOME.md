@@ -13,10 +13,14 @@ This does **not** confer ownership of repositories hosted in someone's personal 
 | --- | --- | --- | --- |
 | OpenInternetGateway | [Org code and PRs](https://github.com/Usefull-Skills/OpenInternetGateway) | [Org Issues](https://github.com/Usefull-Skills/OpenInternetGateway/issues) | [Personal original releases](https://github.com/GOD13emad/OpenInternetGateway/releases) |
 | ChatGPTRemoteCommander | [Org code and PRs](https://github.com/Usefull-Skills/ChatGPTRemoteCommander) | [Org Issues](https://github.com/Usefull-Skills/ChatGPTRemoteCommander/issues) | [Personal original releases](https://github.com/GOD13emad/ChatGPTRemoteCommander/releases) |
+| DirectInternetMethod | [Org code and PRs](https://github.com/Usefull-Skills/DirectInternetMethod) | [Org Issues](https://github.com/Usefull-Skills/DirectInternetMethod/issues) | [Personal original releases](https://github.com/GOD13emad/DirectInternetMethod/releases) |
+| FreeNetHub | [Org code and PRs](https://github.com/Usefull-Skills/FreeNetHub) | [Org Issues](https://github.com/Usefull-Skills/FreeNetHub/issues) | [Personal original releases](https://github.com/GOD13emad/FreeNetHub/releases) |
+| TaskbarMonitorEnhanced | [Org code and PRs](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced) | [Org Issues](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/issues) | [Personal original releases](https://github.com/GOD13emad/TaskbarMonitorEnhanced/releases) |
+| PersianWordAgent | [Org code and PRs](https://github.com/Usefull-Skills/PersianWordAgent) | [Org Issues](https://github.com/Usefull-Skills/PersianWordAgent/issues) | [Personal original releases](https://github.com/GOD13emad/PersianWordAgent/releases) |
 
-**This table designates the organization repositories as the collaboration/candidate-development home for these two projects, not yet the product release source.** The existing personal repositories remain GitHub *upstream parents* and retain the **existing publication/updater authority** for releases, updater endpoints, and their historic issues/PRs until a separately reviewed release migration succeeds. Do not silently replace the release URL in an installed client.
+**This table designates the organization repositories as the collaboration/candidate-development home for these six first-party projects, not yet the product release source.** The existing personal repositories remain GitHub *upstream parents* and retain the **existing publication/updater authority** for releases, updater endpoints, and their historic issues/PRs until a separately reviewed release migration succeeds. Do not silently replace the release URL in an installed client.
 
-For other public forks, continue following [the project catalog](PROJECT_CATALOG.md) and that project's own maintainer guidance; a generic policy must not claim transfer of third-party ownership, licensing or release authority. Private repositories are **not cataloged publicly** and must remain private.
+For the two legacy third-party fork chains (LTEMonitor and WSAGAScript), continue following [the project catalog](PROJECT_CATALOG.md) and that project's own maintainer guidance; a generic policy must not claim transfer of third-party ownership, licensing or release authority. Private repositories are **not cataloged publicly** and must remain private.
 
 ## Safe two-owner workflow
 
@@ -29,9 +33,9 @@ For other public forks, continue following [the project catalog](PROJECT_CATALOG
 ## Verified boundaries and open decisions
 
 - **Organization collaboration access:** both active Owners and Admin permissions, verified via authenticated GitHub Owner and repository permission readbacks.
-- **Org issue intake for these two projects:** `has_issues=true` confirmed via GitHub REST after an authorized, reversible setting change. Historic issues in the personal repos are **not migrated**.
-- **Upstream relationship:** both org repositories remain public GitHub forks of `GOD13emad` originals; their protected default-branch SHA matched the parent default-branch SHA at the 2026-10-15 readback. This is **not** a detached independent upstream.
-- **Code delivery:** existing open organization PRs for these two projects require genuine independent Owner review and accepted tests before any main merge.
+- **Org issue intake for all six first-party projects:** `has_issues=true` confirmed via GitHub REST after an authorized, reversible setting change. Historic issues in the personal repos are **not migrated**.
+- **Upstream relationship:** all six org repositories remain public GitHub forks of `GOD13emad` originals; their protected default-branch SHA values matched the parent default-branch SHAs at the 2026-10-15 readback. This is **not** a detached independent upstream.
+- **Code delivery:** organization PRs for these first-party projects require genuine independent Owner review and accepted tests before any main merge.
 - **Release migration:** still **OPEN**. The current applications and release automation reference personal GitHub namespaces; no release endpoint, artifact, tag or GitHub ownership transfer was changed.
 - **Policy publication:** edits in this document require accepted organization branch protection and authorized review to become effective on the default branch. Until then, any PR containing this text is a candidate proposal, not an already published governance policy.
 
