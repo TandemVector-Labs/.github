@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/tandemvector-banner.svg" width="100%" alt="TandemVector Labs — Engineering, Software, Research"></p>
+
 # TandemVector Labs
 
 **A shared engineering and software R&D collective — building reliable systems together.**
