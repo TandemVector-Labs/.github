@@ -9,7 +9,6 @@ This is a **navigation and provenance catalog**, not a blanket statement that ev
 | Project | Repository | Issues | Published releases | Status |
 | --- | --- | --- | --- | --- |
 | Remote Commander Browser | [Code](https://github.com/Usefull-Skills/remote-commander-browser) | [Issues](https://github.com/Usefull-Skills/remote-commander-browser/issues) | [Release history](https://github.com/Usefull-Skills/remote-commander-browser/releases) | Unofficial CEF browser; preview/candidate and stable claims must be checked per release |
-| Appearance Studio Core | [Code](https://github.com/Usefull-Skills/AppearanceStudio-Core) | [Issues](https://github.com/Usefull-Skills/AppearanceStudio-Core/issues) | [Current release status](https://github.com/Usefull-Skills/AppearanceStudio-Core#release-status) | Linux/GNOME v0.9.0 **release candidate**; separate Arclenor Technologies product identity, authored by Dr. Emadoddin; Windows not yet shipped |
 
 Remote Commander Browser is a distinct desktop browser project. It is **not** the Remote Commander MCP server and is not affiliated with or endorsed by OpenAI.
 
