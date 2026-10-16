@@ -41,11 +41,12 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 Browse the [complete public project directory](https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
 
 
-### Original project in this organization
+### Original projects hosted in this organization
 
 | Project | Focus | Status |
 | --- | --- | --- |
 | **[Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
+| **[Appearance Studio Core](https://github.com/Usefull-Skills/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
