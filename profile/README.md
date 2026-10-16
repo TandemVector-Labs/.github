@@ -1,10 +1,29 @@
-# TandemVector Labs
+<!-- Public TandemVector Labs profile; no private projects or unreleased artwork. -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Usefull-Skills/.github/main/brand/banner.svg" alt="TandemVector Labs — building reliable systems together" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md"><strong>Project directory</strong></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md">Contribute</a> &nbsp;·&nbsp;
+  <a href="https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md">Governance</a> &nbsp;·&nbsp;
+  <a href="https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md">Security</a> &nbsp;·&nbsp;
+  <a href="https://github.com/Usefull-Skills/.github/blob/main/SUPPORT.md">Support</a>
+</p>
+
+## About TandemVector Labs
 
 **A shared engineering and software R&D collective — building reliable systems together.**
 
 TandemVector Labs is a **jointly operated technical collective**, not the personal brand of either contributor. Our work connects developer tools, applied engineering, research workflows, secure desktop software, and connectivity systems. We prioritize **traceable changes, clear limitations, security-conscious design, and reproducible releases**.
 
 > **Brand:** TandemVector Labs · **Current GitHub namespace:** `Usefull-Skills`. A possible future handle change is not yet complete. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
+
+### Areas of work
+
+| Developer tooling | Desktop experiences | Connectivity and research |
+| :--- | :--- | :--- |
+| Automation workflows, reproducible utilities and engineering infrastructure | Accessible interfaces, desktop software and practical user-focused tools | Reliable networking, technical experimentation and applied R&amp;D |
 
 ## Explore the work
 

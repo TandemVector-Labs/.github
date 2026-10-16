@@ -20,3 +20,15 @@ GitHub inherits supported default community files from this public `.github` rep
 
 **Current URL:** https://github.com/Usefull-Skills
 **Potential future handle:** `TandemVector-Labs` — not yet executed; verify links and external dependencies before changing the namespace.
+
+## Visual identity
+
+The public organization profile uses a single **TandemVector Labs** visual identity. Source artwork is maintained here, separately from project-specific screenshots or third-party media:
+
+- [Scalable brand mark](brand/monogram.svg) (SVG)
+- [Organization profile banner](brand/banner.svg) (SVG, 1600 × 520)
+- [Ready-to-upload organization avatar](brand/avatar.png) (PNG, 384 × 384)
+
+![TandemVector Labs avatar](brand/avatar.png)
+
+**Usage boundaries:** This original artwork represents a shared project and collaboration identity—not a registered company, cleared trademark, verified domain, completed product release, or third-party endorsement. The current namespace remains `Usefull-Skills`; these assets do not rename the organization. Setting the account avatar requires an organization owner to upload the PNG in organization profile settings. Keep private repositories, secrets and unlicensed content out of the public profile.
