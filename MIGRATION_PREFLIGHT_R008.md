@@ -1,5 +1,11 @@
 # TandemVector Labs — Organization Rename Preflight R008
 
+> **R047 VERIFIED 2026-10-17 - supersedes R040 current repo/security counts:** The organization is still Usefull-Skills, stable numeric ID 334108004. Independent authorized CLI readbacks from GOD13emad and mohammadmohammadzadeh19960-code show 17 total organization repos (11 public, 6 private), both active Owners with Admin on all 17, and effective partner Write on all 8 agreed public personal origins.
+>
+> **Security and paid-plan gate:** Organization 2FA enforcement active; member default repo permission none; ordinary members cannot delete repositories or change visibility. Public default branches 11/11 protected, private default branches 0/6 protected on GitHub Free. Private-repository branch protection requires an eligible paid organization plan per current GitHub documentation. Neither billing upgrade nor private visibility change is authorized by this note.
+>
+> **Still NOT RENAMED:** Actual independent other-owner approval, separate human 2FA recovery readiness, private-security plan decision, integration/webhook/Pages/Packages/updater audit, maintenance window and live target-handle availability are still OPEN. Current organizational control issue #1 remains the singleton authority. Historical R008/R009/R010/R040 sections below remain provenance, not a current 14-repository baseline.
+
 > **R040 CURRENT verified state (2026-10-15): This checkpoint supersedes every older R008/R009/R010 assertion labeled CURRENT, including historical unchecked 2FA/member-privilege/branch-protection boxes below.** Organization identity remains `Usefull-Skills` ID `334108004`; **no handle rename has happened**. Read this section and the live central issue before any consequential rename action.
 
 ## R040 — Current pre-rename acceptance (2026-10-15)
