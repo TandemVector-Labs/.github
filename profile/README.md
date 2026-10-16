@@ -1,6 +1,6 @@
 <!-- Public TandemVector Labs profile; no private projects or unreleased artwork. -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Usefull-Skills/.github/main/brand/banner.svg" alt="TandemVector Labs — building reliable systems together" width="100%" />
+  <img src="../brand/banner.svg" alt="TandemVector Labs — building reliable systems together" width="100%" />
 </p>
 
 <p align="center">
