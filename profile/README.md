@@ -52,7 +52,7 @@ Remote Commander Browser is a **separate project** from the Remote Commander MCP
 
 ### Public forks of contributor-owned projects
 
-These are **GitHub forks inside this organization**. The personal repositories remain the **upstream sources**; they have not been transferred or deleted. The forked default-branch commit SHAs were checked against their upstream counterparts on 2026-10-14.
+These are **GitHub forks inside this organization**. The personal repositories remain the **upstream sources**; they have not been transferred or deleted. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
 
 | Organization repository | Original upstream | Focus |
 | --- | --- | --- |
@@ -78,7 +78,13 @@ The complete public project list, including legacy work and forks, is available 
 
 ## Joint stewardship
 
-This GitHub portfolio has two organization owners. The public organization identity is shared; individual projects retain their documented authorship and licensing. Governance and contribution standards are published in the [organization policy repository](https://github.com/Usefull-Skills/.github), including [Governance](https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md), [Security](https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md), and [Contributing](https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md).
+Two active GitHub organization owners jointly steward this portfolio. Neither account is the sole owner of the collective, and individual repositories retain their documented authorship, licensing and release authority.
+
+| [<img src="https://avatars.githubusercontent.com/u/94546844?v=4" alt="GOD13emad GitHub avatar" width="72"><br>**Aliakbar Emadoddin**](https://github.com/GOD13emad) | [<img src="https://avatars.githubusercontent.com/u/332195122?v=4" alt="MMZ GitHub avatar" width="72"><br>**MMZ**](https://github.com/mohammadmohammadzadeh19960-code) |
+| :---: | :---: |
+| Mechanical engineering research, developer tooling and original-source stewardship | Mechanical engineering research & development and joint organization stewardship |
+
+Both owners share administration within the organization, but this does **not** grant shared ownership of personal upstream repositories. Governance and contribution standards are available in [Governance](https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md), [Security](https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md), and [Contributing](https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md).
 
 ## How we work
 
