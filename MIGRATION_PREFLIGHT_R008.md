@@ -1,10 +1,14 @@
 # TandemVector Labs — Organization Rename Preflight R008
 
-> **R047 VERIFIED 2026-10-17 - supersedes R040 current repo/security counts:** The organization is still Usefull-Skills, stable numeric ID 334108004. Independent authorized CLI readbacks from GOD13emad and mohammadmohammadzadeh19960-code show 17 total organization repos (11 public, 6 private), both active Owners with Admin on all 17, and effective partner Write on all 8 agreed public personal origins.
+> **R048 CURRENT — verified 2026-10-18; supersedes R047 and all earlier snapshots:** The organization remains `Usefull-Skills` (numeric ID `334108004`), with **17 repositories (11 public, 6 private)**. Both independently authenticated Owners are `active/admin` across all 17; Mohammad retains Write on all **8/8** agreed public personal upstreams. The existing shared display brand is TandemVector Labs; it is not a claim of incorporated-company status.
 >
-> **Security and paid-plan gate:** Organization 2FA enforcement active; member default repo permission none; ordinary members cannot delete repositories or change visibility. Public default branches 11/11 protected, private default branches 0/6 protected on GitHub Free. Private-repository branch protection requires an eligible paid organization plan per current GitHub documentation. Neither billing upgrade nor private visibility change is authorized by this note.
+> **Security and continuity:** Organization-wide 2FA requirement is active, member repository deletion and visibility changes are restricted; **11/11 public default branches protected**, **0/6 private default branches protected** under the current plan (private branch security is still a separate owner/plan decision). Individual Owner 2FA recovery readiness has **not** been verified; private repositories remain private.
 >
-> **Still NOT RENAMED:** Actual independent other-owner approval, separate human 2FA recovery readiness, private-security plan decision, integration/webhook/Pages/Packages/updater audit, maintenance window and live target-handle availability are still OPEN. Current organizational control issue #1 remains the singleton authority. Historical R008/R009/R010/R040 sections below remain provenance, not a current 14-repository baseline.
+> **Restricted pre-rename baseline (not published here):** Two active Admin memberships and exact IDs, default refs, visibility, complete Git tag and Release collections were verified for all **17/17** organization repositories. The single confidential owner-local record has SHA-256 `4bbc81de12d6d7a459654686d10d444ff73046928b08c3a96ea7476fdc76a5b3` at the accepted checkpoint; reverify before any actual rename. Private repository names, refs and release/asset identities are deliberately not disclosed in this public PR.
+>
+> **API-visible integration inventory:** After legitimate GitHub Owner OAuth, the organization reported **0 organization webhooks**, **0 packages** across the six supported queried GitHub package types, and **0 GitHub Projects V2 visible to either Owner**; repository-level webhook lists were empty across 17/17. These scoped zeros **do not** prove absence of external registries, developer apps, installed-client callbacks, private local integrations or future changes.
+>
+> **Still NOT RENAMED / FINAL OPEN:** The actual independent other-Owner reviews for governance PRs #2/#3/#4/#6, both Owners' recovery readiness, private branch-protection decision, package/updater-client continuity, new-handle confirmation, maintenance-window approval and real GitHub UI rename/poststate checks remain separate gates. This preflight PR must not itself execute a rename or manufacture Owner approval. The existing [organization control Issue #1](https://github.com/Usefull-Skills/.github/issues/1) is the current singleton evidence authority; historical R040/R010/R009/R008 sections below are retained as their original dated checkpoints.
 
 > **R040 CURRENT verified state (2026-10-15): This checkpoint supersedes every older R008/R009/R010 assertion labeled CURRENT, including historical unchecked 2FA/member-privilege/branch-protection boxes below.** Organization identity remains `Usefull-Skills` ID `334108004`; **no handle rename has happened**. Read this section and the live central issue before any consequential rename action.
 
@@ -31,12 +35,12 @@
 
 > **R009 current-state notice (2026-10-14):** This document retains the original R008 historical 12-repository preflight. The verified current count is **13 repositories (10 public / 3 private)**. The 12-repository references below are historical and MUST NOT be used as the current rename acceptance baseline. See the R009 delta at the end. The organization has **not** been renamed.
 
-**Status: REVIEW REQUIRED / NOT RENAMED**  
-**Current handle:** `Usefull-Skills`  
-**Proposed handle:** `TandemVector-Labs` (the actual GitHub rename form must reconfirm availability)  
-**Organization identity:** numeric ID `334108004` must remain identical  
-**Display brand:** TandemVector Labs (jointly operated, not the personal name of either owner)  
-**Plan at preflight:** GitHub Free  
+- **Status: REVIEW REQUIRED / NOT RENAMED**
+- **Current handle:** `Usefull-Skills`
+- **Proposed handle:** `TandemVector-Labs` (the actual GitHub rename form must reconfirm availability)
+- **Organization identity:** numeric ID `334108004` must remain identical
+- **Display brand:** TandemVector Labs (jointly operated, not the personal name of either owner)
+- **Plan at preflight:** GitHub Free
 **Source of evidence:** authenticated owner GitHub CLI/REST, organization GitHub repository and issue #1, 2026-10-14
 
 ## Access/continuity checkpoint
