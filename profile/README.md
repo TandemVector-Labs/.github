@@ -11,13 +11,16 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 Browse the [complete public project directory](https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
 
 
-### Original project in this organization
+### Original repositories hosted in this organization
 
 | Project | Focus | Status |
 | --- | --- | --- |
 | **[Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
+| **[Appearance Studio Core](https://github.com/Usefull-Skills/AppearanceStudio-Core)** | Independently authored Linux/GNOME appearance center with Theme Packs and transactional rollback; Arclenor Technologies branding in its README | **v0.9.0 release candidate**; GNOME 50 live validation pending, Windows not shipped |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
+
+Appearance Studio Core's README attributes individual authorship to Dr. Emadoddin and describes its own product brand. Being hosted by the shared organization does **not** imply joint authorship or stable-release acceptance.
 
 ### Public forks of contributor-owned projects
 
@@ -69,6 +72,8 @@ This GitHub portfolio has two organization owners. The public organization ident
 ## فارسی
 
 این مجموعه برای معرفی و توسعه ابزارهای مهندسی، نرم‌افزارهای کاربردی و گردش‌کارهای فنیِ قابل بازتولید ایجاد شده است. هر پروژه مستندات، سطح بلوغ، شرایط مجوز و الزامات امنیتی مخصوص خود را دارد.
+
+مخزن عمومی [Appearance Studio Core](https://github.com/Usefull-Skills/AppearanceStudio-Core) به‌صورت مستقل معرفی می‌شود؛ طبق README همان پروژه، نسخهٔ Linux/GNOME 0.9.0 در مرحلهٔ Release Candidate است و نسخهٔ Windows منتشر نشده است.
 
 هشت پروژه عمومی در قالب **Fork** به سازمان اضافه شده‌اند. مخازن شخصی همچنان مرجع اصلی هستند و نسخه‌های Fork لزوماً همگام‌سازی خودکار، تنظیمات CI یا انتشارهای اصلی را ندارند. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
 
