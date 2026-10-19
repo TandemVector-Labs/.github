@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 import html.parser
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import re
 import struct
 import sys
@@ -153,7 +153,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     for owner in ("GOD13emad", "mohammadmohammadzadeh19960-code"):
         require("https://github.com/" + owner in profile_text, "OWNER_LINK_MISSING:" + owner)
 
-    previews = sorted((brand / "social").glob("*.png"))
+    previews = sorted((brand / "social").glob("*.png"), key=lambda p: p.name)
     require([p.name for p in previews] == sorted(EXPECTED_PREVIEWS), "SOCIAL_PREVIEW_SET")
     pngs = [(brand / "avatar.png", (384, 384))]
     pngs.extend((x, (1280, 640)) for x in previews)
@@ -257,7 +257,13 @@ def self_test() -> None:
                 raise AssertionError("UNSAFE_LINK_NOT_REJECTED")
             except AuditError:
                 pass
-    print(json.dumps({"selftest": "PASS", "cases": 8}, sort_keys=True))
+    mixed_case = [
+        PureWindowsPath("remote-commander-browser.png"),
+        PureWindowsPath("TaskbarMonitorEnhanced.png"),
+    ]
+    require([p.name for p in sorted(mixed_case, key=lambda p: p.name)] ==
+            sorted(p.name for p in mixed_case), "TEST_PORTABLE_PREVIEW_ORDER")
+    print(json.dumps({"selftest": "PASS", "cases": 9}, sort_keys=True))
 
 
 if __name__ == "__main__":
