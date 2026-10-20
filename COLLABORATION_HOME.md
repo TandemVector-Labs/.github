@@ -1,7 +1,7 @@
 # Shared GitHub development home
 
 **Effective scope (2026-10-15):** TandemVector Labs operates the GitHub organization
-[`Usefull-Skills`](https://github.com/Usefull-Skills) with two equal, active **organization Owners**:
+[`TandemVector-Labs`](https://github.com/TandemVector-Labs) with two equal, active **organization Owners**:
 [`GOD13emad`](https://github.com/GOD13emad) and
 [`mohammadmohammadzadeh19960-code`](https://github.com/mohammadmohammadzadeh19960-code).
 Each has repository **Admin** authority throughout the organization's public and private repositories.
@@ -11,12 +11,12 @@ This does **not** confer ownership of repositories hosted in someone's personal 
 
 | Project | Shared team development and review | New issue reports | Existing published releases / updater source |
 | --- | --- | --- | --- |
-| OpenInternetGateway | [Org code and PRs](https://github.com/Usefull-Skills/OpenInternetGateway) | [Org Issues](https://github.com/Usefull-Skills/OpenInternetGateway/issues) | [Personal original releases](https://github.com/GOD13emad/OpenInternetGateway/releases) |
-| ChatGPTRemoteCommander | [Org code and PRs](https://github.com/Usefull-Skills/ChatGPTRemoteCommander) | [Org Issues](https://github.com/Usefull-Skills/ChatGPTRemoteCommander/issues) | [Personal original releases](https://github.com/GOD13emad/ChatGPTRemoteCommander/releases) |
-| DirectInternetMethod | [Org code and PRs](https://github.com/Usefull-Skills/DirectInternetMethod) | [Org Issues](https://github.com/Usefull-Skills/DirectInternetMethod/issues) | [Personal original releases](https://github.com/GOD13emad/DirectInternetMethod/releases) |
-| FreeNetHub | [Org code and PRs](https://github.com/Usefull-Skills/FreeNetHub) | [Org Issues](https://github.com/Usefull-Skills/FreeNetHub/issues) | [Personal original releases](https://github.com/GOD13emad/FreeNetHub/releases) |
-| TaskbarMonitorEnhanced | [Org code and PRs](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced) | [Org Issues](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced/issues) | [Personal original releases](https://github.com/GOD13emad/TaskbarMonitorEnhanced/releases) |
-| PersianWordAgent | [Org code and PRs](https://github.com/Usefull-Skills/PersianWordAgent) | [Org Issues](https://github.com/Usefull-Skills/PersianWordAgent/issues) | [Personal original releases](https://github.com/GOD13emad/PersianWordAgent/releases) |
+| OpenInternetGateway | [Org code and PRs](https://github.com/TandemVector-Labs/OpenInternetGateway) | [Org Issues](https://github.com/TandemVector-Labs/OpenInternetGateway/issues) | [Personal original releases](https://github.com/GOD13emad/OpenInternetGateway/releases) |
+| ChatGPTRemoteCommander | [Org code and PRs](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) | [Org Issues](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander/issues) | [Personal original releases](https://github.com/GOD13emad/ChatGPTRemoteCommander/releases) |
+| DirectInternetMethod | [Org code and PRs](https://github.com/TandemVector-Labs/DirectInternetMethod) | [Org Issues](https://github.com/TandemVector-Labs/DirectInternetMethod/issues) | [Personal original releases](https://github.com/GOD13emad/DirectInternetMethod/releases) |
+| FreeNetHub | [Org code and PRs](https://github.com/TandemVector-Labs/FreeNetHub) | [Org Issues](https://github.com/TandemVector-Labs/FreeNetHub/issues) | [Personal original releases](https://github.com/GOD13emad/FreeNetHub/releases) |
+| TaskbarMonitorEnhanced | [Org code and PRs](https://github.com/TandemVector-Labs/TaskbarMonitorEnhanced) | [Org Issues](https://github.com/TandemVector-Labs/TaskbarMonitorEnhanced/issues) | [Personal original releases](https://github.com/GOD13emad/TaskbarMonitorEnhanced/releases) |
+| PersianWordAgent | [Org code and PRs](https://github.com/TandemVector-Labs/PersianWordAgent) | [Org Issues](https://github.com/TandemVector-Labs/PersianWordAgent/issues) | [Personal original releases](https://github.com/GOD13emad/PersianWordAgent/releases) |
 
 **This table designates the organization repositories as the collaboration/candidate-development home for these six first-party projects, not yet the product release source.** The existing personal repositories remain GitHub *upstream parents* and retain the **existing publication/updater authority** for releases, updater endpoints, and their historic issues/PRs until a separately reviewed release migration succeeds. Do not silently replace the release URL in an installed client.
 

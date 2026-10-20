@@ -1,3 +1,7 @@
+> **2026-10-20 current state, superseding this historic pre-rename preflight:** GitHub organization handle is [TandemVector-Labs](https://github.com/TandemVector-Labs), matching display name TandemVector Labs. The existing organization ID 334108004, 17 repositories (11 public/6 private) and both Owners are preserved. The R048/R040 sections and earlier Usefull-Skills links below are DATED BASELINES, not current routing or permission to replay old migration/rename actions. Remaining release, branch-protection and independent review gates are tracked in [the canonical portfolio Issue #1](https://github.com/TandemVector-Labs/.github/issues/1).
+
+## Historical pre-rename snapshots (preserved below)
+
 # TandemVector Labs — Organization Rename Preflight R008
 
 > **R048 CURRENT — verified 2026-10-18; supersedes R047 and all earlier snapshots:** The organization remains `Usefull-Skills` (numeric ID `334108004`), with **17 repositories (11 public, 6 private)**. Both independently authenticated Owners are `active/admin` across all 17; Mohammad retains Write on all **8/8** agreed public personal upstreams. The existing shared display brand is TandemVector Labs; it is not a claim of incorporated-company status.
