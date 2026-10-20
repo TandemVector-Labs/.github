@@ -1,4 +1,15 @@
-# Organization namespace migration — TandemVector Labs
+# GitHub organization handle rename — executed 2026-10-20; follow-up verification OPEN
+
+**Live organization:** [TandemVector Labs](https://github.com/TandemVector-Labs) (display name: TandemVector Labs)
+**Current GitHub handle:** TandemVector-Labs
+**Former GitHub handle:** Usefull-Skills (historical provenance, no longer a valid organization REST API endpoint)
+**Organization identity:** stable GitHub organization ID 334108004, both active Owners, 17 repositories (11 public, 6 private)
+**Accepted operation:** official GitHub Owner Settings > General > Rename organization; live URL, organization blog and MMZ profile link independently read back
+**Outstanding follow-up:** update checked-in current links and relevant remote URLs; inventory executable workflows, packages, webhooks, third-party integrations and external references. Preserve historical SHA/audit records without inventing compatibility. Independent governance review and product acceptance remain separate gates.
+
+For canonical current acceptance and remaining work, see [portfolio Issue #1](https://github.com/TandemVector-Labs/.github/issues/1). GitHub redirects existing repository web/Git URLs, but does not redirect the former organization profile page or old REST API path. Do not use legacy endpoints for new automation.
+
+## Historical pre-rename plan (preserved exactly below; its PREPARED status is not current)
 
 **Status: PREPARED / NOT EXECUTED**  
 **Brand (display name):** TandemVector Labs  

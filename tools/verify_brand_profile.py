@@ -148,7 +148,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     require(profile.is_file(), "ORG_PROFILE_MISSING")
     profile_text = profile.read_text(encoding="utf-8")
     require("TandemVector Labs" in profile_text, "BRAND_IDENTITY_MISSING")
-    require("Usefull-Skills" in profile_text, "CURRENT_NAMESPACE_MISSING")
+    require("TandemVector-Labs" in profile_text, "CURRENT_NAMESPACE_MISSING")
     require("not a claim of registered company status" in profile_text, "BRAND_STATUS_CAVEAT_MISSING")
     for owner in ("GOD13emad", "mohammadmohammadzadeh19960-code"):
         require("https://github.com/" + owner in profile_text, "OWNER_LINK_MISSING:" + owner)
@@ -189,7 +189,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         require(path.startswith("../brand/social/"), "FEATURED_IMAGE_NOT_LOCAL")
         img = relative_file(profile, path, root)
         require(img.is_file() and img.name in EXPECTED_PREVIEWS, "FEATURED_IMG_NOT_CANONICAL")
-        require(target.startswith("https://github.com/Usefull-Skills/"), "FEATURED_TARGET_NOT_ORG")
+        require(target.startswith("https://github.com/TandemVector-Labs/"), "FEATURED_TARGET_NOT_ORG")
         feature_images.add(img.name)
     require(len(feature_images) == 4, "FEATURED_IMAGE_REPEATED")
 

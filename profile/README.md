@@ -4,11 +4,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md"><strong>Project directory</strong></a> &nbsp;·&nbsp;
-  <a href="https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md">Contribute</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md">Governance</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md">Security</a> &nbsp;·&nbsp;
-  <a href="https://github.com/Usefull-Skills/.github/blob/main/SUPPORT.md">Support</a>
+  <a href="https://github.com/TandemVector-Labs/.github/blob/main/PROJECT_CATALOG.md"><strong>Project directory</strong></a> &nbsp;·&nbsp;
+  <a href="https://github.com/TandemVector-Labs/.github/blob/main/CONTRIBUTING.md">Contribute</a> &nbsp;·&nbsp;
+  <a href="https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md">Governance</a> &nbsp;·&nbsp;
+  <a href="https://github.com/TandemVector-Labs/.github/blob/main/SECURITY.md">Security</a> &nbsp;·&nbsp;
+  <a href="https://github.com/TandemVector-Labs/.github/blob/main/SUPPORT.md">Support</a>
 </p>
 
 ## About TandemVector Labs
@@ -17,7 +17,7 @@
 
 TandemVector Labs is a **jointly operated technical collective**, not the personal brand of either contributor. Our work connects developer tools, applied engineering, research workflows, secure desktop software, and connectivity systems. We prioritize **traceable changes, clear limitations, security-conscious design, and reproducible releases**.
 
-> **Brand:** TandemVector Labs · **Current GitHub namespace:** `Usefull-Skills`. A possible future handle change is not yet complete. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
+> **Brand:** TandemVector Labs · **Current GitHub namespace:** `TandemVector-Labs`. The organization URL was aligned with its displayed brand on 2026-10-20. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
 
 ### Areas of work
 
@@ -29,24 +29,24 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 
 | | |
 | :--- | :--- |
-| [![Remote Commander Browser — CEF desktop browser shell](../brand/social/remote-commander-browser.png)](https://github.com/Usefull-Skills/remote-commander-browser) | [![ChatGPT Remote Commander — permission-aware MCP tooling](../brand/social/ChatGPTRemoteCommander.png)](https://github.com/Usefull-Skills/ChatGPTRemoteCommander) |
-| **[Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/Usefull-Skills/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
-| [![Open Internet Gateway — cross-platform connectivity](../brand/social/OpenInternetGateway.png)](https://github.com/Usefull-Skills/OpenInternetGateway) | [![FreeNet Hub — connectivity desktop tools](../brand/social/FreeNetHub.png)](https://github.com/Usefull-Skills/FreeNetHub) |
-| **[Open Internet Gateway](https://github.com/Usefull-Skills/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/Usefull-Skills/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
+| [![Remote Commander Browser — CEF desktop browser shell](../brand/social/remote-commander-browser.png)](https://github.com/TandemVector-Labs/remote-commander-browser) | [![ChatGPT Remote Commander — permission-aware MCP tooling](../brand/social/ChatGPTRemoteCommander.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
+| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
+| [![Open Internet Gateway — cross-platform connectivity](../brand/social/OpenInternetGateway.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — connectivity desktop tools](../brand/social/FreeNetHub.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
+| **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
 
 *These visual cards are a navigation aid, not GitHub pinned-repository settings or an indication of release acceptance. See each project's README and the directory below for current status and attribution.*
 
 ## Explore the work
 
-Browse the [complete public project directory](https://github.com/Usefull-Skills/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
+Browse the [complete public project directory](https://github.com/TandemVector-Labs/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
 
 
 ### Original projects hosted in this organization
 
 | Project | Focus | Status |
 | --- | --- | --- |
-| **[Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
-| **[Appearance Studio Core](https://github.com/Usefull-Skills/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
+| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
+| **[Appearance Studio Core](https://github.com/TandemVector-Labs/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
@@ -56,12 +56,12 @@ These are **GitHub forks inside this organization**. The personal repositories r
 
 | Organization repository | Original upstream | Focus |
 | --- | --- | --- |
-| [ChatGPT Remote Commander](https://github.com/Usefull-Skills/ChatGPTRemoteCommander) | [Source](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Permission-aware Windows/Linux MCP and project workflows |
-| [Direct Internet Method](https://github.com/Usefull-Skills/DirectInternetMethod) | [Source](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking |
-| [FreeNet Hub](https://github.com/Usefull-Skills/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
-| [Open Internet Gateway](https://github.com/Usefull-Skills/OpenInternetGateway) | [Source](https://github.com/GOD13emad/OpenInternetGateway) | Cross-platform, self-healing network gateway |
-| [Taskbar Monitor Enhanced](https://github.com/Usefull-Skills/TaskbarMonitorEnhanced) | [Source](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar and hardware monitoring |
-| [Persian Word Agent](https://github.com/Usefull-Skills/PersianWordAgent) | [Source](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
+| [ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) | [Source](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Permission-aware Windows/Linux MCP and project workflows |
+| [Direct Internet Method](https://github.com/TandemVector-Labs/DirectInternetMethod) | [Source](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking |
+| [FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
+| [Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway) | [Source](https://github.com/GOD13emad/OpenInternetGateway) | Cross-platform, self-healing network gateway |
+| [Taskbar Monitor Enhanced](https://github.com/TandemVector-Labs/TaskbarMonitorEnhanced) | [Source](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar and hardware monitoring |
+| [Persian Word Agent](https://github.com/TandemVector-Labs/PersianWordAgent) | [Source](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
 
 **Important:** Forks preserve Git provenance but are not a full transfer of GitHub Issues, pull requests, releases, Wikis, repository settings, or CI secrets. Fork branches are not continuously synchronized by this profile; consult the upstream project for authoritative releases.
 
@@ -69,8 +69,8 @@ These are **GitHub forks inside this organization**. The personal repositories r
 
 These are older **forks of third-party upstream projects**, not products originally authored by this organization:
 
-- [LTEMonitor in this organization](https://github.com/Usefull-Skills/LTEMonitor) ← [personal fork](https://github.com/GOD13emad/LTEMonitor) ← [original upstream](https://github.com/kruzer/LTEMonitor)
-- [WSAGAScript in this organization](https://github.com/Usefull-Skills/WSAGAScript) ← [personal fork](https://github.com/GOD13emad/WSAGAScript) ← [original upstream](https://github.com/WSA-Community/WSAGAScript)
+- [LTEMonitor in this organization](https://github.com/TandemVector-Labs/LTEMonitor) ← [personal fork](https://github.com/GOD13emad/LTEMonitor) ← [original upstream](https://github.com/kruzer/LTEMonitor)
+- [WSAGAScript in this organization](https://github.com/TandemVector-Labs/WSAGAScript) ← [personal fork](https://github.com/GOD13emad/WSAGAScript) ← [original upstream](https://github.com/WSA-Community/WSAGAScript)
 
 Their own licenses, credits, maturity, and upstream support policies remain authoritative. Presence in the organization does **not** imply active maintenance.
 
@@ -84,7 +84,7 @@ Two active GitHub organization owners jointly steward this portfolio. Neither ac
 | :---: | :---: |
 | Mechanical engineering research, developer tooling and original-source stewardship | Mechanical engineering research & development and joint organization stewardship |
 
-Both owners share administration within the organization, but this does **not** grant shared ownership of personal upstream repositories. Governance and contribution standards are available in [Governance](https://github.com/Usefull-Skills/.github/blob/main/GOVERNANCE.md), [Security](https://github.com/Usefull-Skills/.github/blob/main/SECURITY.md), and [Contributing](https://github.com/Usefull-Skills/.github/blob/main/CONTRIBUTING.md).
+Both owners share administration within the organization, but this does **not** grant shared ownership of personal upstream repositories. Governance and contribution standards are available in [Governance](https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md), [Security](https://github.com/TandemVector-Labs/.github/blob/main/SECURITY.md), and [Contributing](https://github.com/TandemVector-Labs/.github/blob/main/CONTRIBUTING.md).
 
 ## How we work
 
