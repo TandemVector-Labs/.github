@@ -1,6 +1,6 @@
 # GitHub organization handle rename — executed 2026-10-20; follow-up verification OPEN
 
-**Live organization:** [TandemVector Labs](https://github.com/TandemVector-Labs) (display name: TandemVector Labs)
+**Live organization:** [TandemVector-Labs](https://github.com/TandemVector-Labs) (current GitHub display name: TandemVector-Labs; shared prose brand: TandemVector Labs)
 **Current GitHub handle:** TandemVector-Labs
 **Former GitHub handle:** Usefull-Skills (historical provenance, no longer a valid organization REST API endpoint)
 **Organization identity:** stable GitHub organization ID 334108004, both active Owners, 17 repositories (11 public, 6 private)
