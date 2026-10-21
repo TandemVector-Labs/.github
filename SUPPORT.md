@@ -4,9 +4,9 @@ This GitHub organization hosts distinct software and research projects. There is
 
 Start with the specific project's README, release notes, installation guide, known issues and Security policy.
 
-- [Remote Commander Browser](https://github.com/Usefull-Skills/remote-commander-browser): dedicated desktop browser shell (independent, unofficial; candidate maturity varies by release).
-- [ChatGPT Remote Commander](https://github.com/Usefull-Skills/ChatGPTRemoteCommander): organization fork of the separate MCP server; consult [upstream](https://github.com/GOD13emad/ChatGPTRemoteCommander) for active project issues and releases.
-- [Organization portfolio](https://github.com/Usefull-Skills): links to other projects and their upstream sources.
+- [Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser): dedicated desktop browser shell (independent, unofficial; candidate maturity varies by release).
+- [ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander): organization fork of the separate MCP server; consult [upstream](https://github.com/GOD13emad/ChatGPTRemoteCommander) for active project issues and releases.
+- [Organization portfolio](https://github.com/TandemVector-Labs): links to other projects and their upstream sources.
 
 If the repository is a fork with Issues disabled, submit bug reports and feature requests in its **upstream** repository if that project's contribution instructions permit it.
 
