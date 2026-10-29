@@ -19,6 +19,15 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 
 > **Brand:** TandemVector Labs · **Current GitHub namespace:** `TandemVector-Labs`. The organization URL was aligned with its displayed brand on 2026-10-20. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
 
+### Navigate the portfolio
+
+| Discover | Build & contribute | Check provenance |
+| :--- | :--- | :--- |
+| **[Public project catalog](https://github.com/TandemVector-Labs/.github/blob/main/PROJECT_CATALOG.md)**<br>Find each project and its intended audience. | **[Contribution guide](https://github.com/TandemVector-Labs/.github/blob/main/CONTRIBUTING.md)**<br>Issues, pull requests and scoped review. | **[Governance](https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md)**<br>Who maintains what and how decisions are reviewed. |
+| **[Featured work](#featured-public-projects)**<br>Browse project visuals and introductions. | **[Support](https://github.com/TandemVector-Labs/.github/blob/main/SUPPORT.md)**<br>Find the appropriate help channel. | **[Security policy](https://github.com/TandemVector-Labs/.github/blob/main/SECURITY.md)**<br>Report sensitive issues privately. |
+
+*An organization fork is a collaboration location, not automatically the original source or the official release channel.*
+
 ### Areas of work
 
 | Developer tooling | Desktop experiences | Connectivity and research |
