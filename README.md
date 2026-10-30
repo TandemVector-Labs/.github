@@ -24,19 +24,24 @@ GitHub inherits supported default community files from this public `.github` rep
 
 ## Visual identity
 
-The public organization profile uses a single **TandemVector Labs** visual identity. Source artwork is maintained here, separately from project-specific screenshots or third-party media:
+The organization profile uses the original **owner-approved TandemVector Labs** artwork. The files below distinguish current profile graphics, earlier scalable artwork, conceptual project covers and genuine product screenshots:
 
 - [Scalable brand mark](brand/monogram.svg) (SVG)
-- [Organization profile banner](brand/banner.svg) (SVG, 1600 × 520)
-- [Ready-to-upload organization avatar](brand/avatar.png) (PNG, 384 × 384)
+- [Approved organization profile banner](brand/banner-approved-20261030.webp) (WebP, 1440 × 480; used by the [public profile](profile/README.md))
+- [Earlier scalable banner](brand/banner.svg) (SVG, 1600 × 520; retained, not the current profile header)
+- [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; GitHub account-settings upload remains a separate step)
 
-![TandemVector Labs avatar](brand/avatar.png)
+<p align="center"><img src="brand/avatar.png" alt="TandemVector Labs — approved organization avatar" width="160"></p>
 
-**Usage boundaries:** This original artwork represents a shared project and collaboration identity—not a registered company, cleared trademark, verified domain, completed product release, or third-party endorsement. The current namespace remains `TandemVector-Labs`; these assets do not rename the organization. Setting the account avatar requires an organization owner to upload the PNG in organization profile settings. Keep private repositories, secrets and unlicensed content out of the public profile.
+**Usage boundaries:** This original artwork represents a shared project and collaboration identity—not a registered company, cleared trademark, verified domain, completed product release, or third-party endorsement. The current namespace remains `TandemVector-Labs`; these assets do not rename the organization. Publishing `brand/avatar.png` does **not** set the GitHub account avatar: an organization owner must separately apply it in organization profile settings. Keep private repositories, secrets and unlicensed content out of the public profile.
+
+## Featured project visuals
+
+The [organization profile](profile/README.md) uses [Remote Commander Browser](brand/hero/RemoteCommanderBrowser-hero-20261030.png) and [ChatGPT Remote Commander](brand/hero/ChatGPTRemoteCommander-hero-20261030.png) as **conceptual illustrations**, not application screenshots or evidence of product readiness. Its [Open Internet Gateway](brand/screenshots/OpenInternetGateway-dashboard.png) and [FreeNet Hub R37](brand/screenshots/FreeNetHub-R37-dashboard.png) panels are **real, historical application screenshots**, not current-release acceptance evidence. These are distinct from the smaller social preview images below.
 
 ## Repository social preview artwork
 
-Eight optional, original **1280 × 640 PNG** designs (each **under 1 MB**) coordinate with the organization banner. They are stored as reusable artwork, **not automatically applied as repository Social previews**. A repository administrator must select the appropriate PNG under the relevant repository's **Settings → Social preview → Edit → Upload an image** after this PR is approved. Check the public link card afterward.
+Eight optional, original **1280 × 640 PNG** designs (each **under 1 MB**) coordinate with the organization banner. They are stored as reusable artwork, **not automatically applied as repository Social previews**. A repository administrator must select the appropriate PNG under the relevant repository's **Settings → Social preview → Edit → Upload an image** once the asset is published and independent account-setting access is available. Check the public link card afterward.
 
 | Project | Preview | Intended destinations |
 | --- | --- | --- |
