@@ -29,7 +29,7 @@ The organization profile uses the original **owner-approved TandemVector Labs** 
 - [Scalable brand mark](brand/monogram.svg) (SVG)
 - [Current vector profile banner](brand/banner.svg) (SVG, 1600 × 520; used in the [organization profile](profile/README.md))
 - [Preserved previously approved banner](brand/banner-approved-20261030.webp) (WebP, 1440 × 480; retained without changes)
-- [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; GitHub account-settings upload remains a separate step)
+- [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; rasterized from [the canonical SVG mark](brand/monogram.svg); GitHub account-settings upload remains a separate step)
 
 <p align="center"><img src="brand/avatar.png" alt="TandemVector Labs — approved organization avatar" width="160"></p>
 
