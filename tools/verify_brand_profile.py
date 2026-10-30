@@ -30,6 +30,10 @@ EXPECTED_PREVIEWS = (
     "TaskbarMonitorEnhanced.png",
     "remote-commander-browser.png",
 )
+FEATURED_SCREENSHOTS = {
+    "OpenInternetGateway": ("../brand/screenshots/OpenInternetGateway-dashboard.png", (1180, 760)),
+    "FreeNetHub": ("../brand/screenshots/FreeNetHub-R37-dashboard.png", (1440, 1020)),
+}
 CARD_RE = re.compile(r"\[!\[([^\]]+)\]\(([^)]+)\)\]\((https://github\.com/[^)]+)\)")
 MD_LINK_RE = re.compile(r"!?\[[^\]]+\]\(([^)]+)\)")
 FENCE = chr(96) * 3
@@ -186,11 +190,20 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     feature_images = set()
     for alt, path, target in featured:
         require(alt.strip(), "FEATURED_IMG_ALT_EMPTY")
-        require(path.startswith("../brand/social/"), "FEATURED_IMAGE_NOT_LOCAL")
-        img = relative_file(profile, path, root)
-        require(img.is_file() and img.name in EXPECTED_PREVIEWS, "FEATURED_IMG_NOT_CANONICAL")
         require(target.startswith("https://github.com/TandemVector-Labs/"), "FEATURED_TARGET_NOT_ORG")
-        feature_images.add(img.name)
+        slug = target.removeprefix("https://github.com/TandemVector-Labs/")
+        require(slug in {"OpenInternetGateway", "FreeNetHub", "remote-commander-browser", "ChatGPTRemoteCommander"},
+                "FEATURED_UNKNOWN_TARGET")
+        if slug in FEATURED_SCREENSHOTS:
+            expected_path, dimensions = FEATURED_SCREENSHOTS[slug]
+        else:
+            expected_path, dimensions = f"../brand/social/{slug}.png", (1280, 640)
+            require(f"{slug}.png" in EXPECTED_PREVIEWS, "FEATURED_SOCIAL_UNKNOWN")
+        require(path == expected_path, "FEATURED_IMG_NOT_CANONICAL")
+        img = relative_file(profile, path, root)
+        require(img.is_file(), "FEATURED_IMG_NOT_LOCAL")
+        require(png_size(img.read_bytes()) == dimensions, "FEATURED_IMG_DIMENSIONS")
+        feature_images.add(path)
     require(len(feature_images) == 4, "FEATURED_IMAGE_REPEATED")
 
     checked, excluded, markdown_count = 0, 0, 0
