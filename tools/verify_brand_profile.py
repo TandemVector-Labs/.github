@@ -165,7 +165,9 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     previews = sorted((brand / "social").glob("*.png"), key=lambda p: p.name)
     require([p.name for p in previews] == sorted(EXPECTED_PREVIEWS), "SOCIAL_PREVIEW_SET")
     pngs = [(brand / "avatar.png", (512, 512))]
-    avatar = (brand / "avatar.png").read_bytes()
+    avatar_file = brand / "avatar.png"
+    require(avatar_file.is_file(), "PNG_FILE_MISSING")
+    avatar = avatar_file.read_bytes()
     approved_avatar_blob = hashlib.sha1(f"blob {len(avatar)}\0".encode("ascii") + avatar).hexdigest()
     require(approved_avatar_blob == "296408af322c2c22d9265749b113946db5f17c6a", "AVATAR_NOT_APPROVED_BLOB")
     pngs.extend((x, (1280, 640)) for x in previews)
