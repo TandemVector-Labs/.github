@@ -55,7 +55,7 @@ Browse the [complete public project directory](https://github.com/TandemVector-L
 | Project | Focus | Status |
 | --- | --- | --- |
 | **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
-| **[Appearance Studio Core](https://github.com/TandemVector-Labs/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
+| **[Appearance Studio Core](https://github.com/TandemVector-Labs/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; authored by **Aliakbar Emadoddin** | **v0.9.1 RC1 prerelease** ([published release](https://github.com/TandemVector-Labs/AppearanceStudio-Core/releases/tag/v0.9.1-rc1-tandemvector)); GNOME 50 live acceptance still pending; no shipped Windows version claimed |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
