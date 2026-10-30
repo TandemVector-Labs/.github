@@ -40,10 +40,10 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 | :--- | :--- |
 | [![Remote Commander Browser — CEF desktop browser shell](../brand/social/remote-commander-browser.png)](https://github.com/TandemVector-Labs/remote-commander-browser) | [![ChatGPT Remote Commander — permission-aware MCP tooling](../brand/social/ChatGPTRemoteCommander.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
 | **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
-| [![Open Internet Gateway — cross-platform connectivity](../brand/social/OpenInternetGateway.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — connectivity desktop tools](../brand/social/FreeNetHub.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
+| [![Open Internet Gateway — genuine desktop dashboard preview from an earlier build](https://raw.githubusercontent.com/TandemVector-Labs/OpenInternetGateway/main/docs/dashboard.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — genuine R37 installed desktop dashboard screenshot](https://raw.githubusercontent.com/TandemVector-Labs/FreeNetHub/main/evidence/R37_INSTALLED_UI_DASHBOARD_20260929.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
 | **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
 
-*These visual cards are a navigation aid, not GitHub pinned-repository settings or an indication of release acceptance. See each project's README and the directory below for current status and attribution.*
+*These visuals are navigation aids, not GitHub pinned-repository settings or an indication of release acceptance. The OIG preview is a repository screenshot from an earlier build; the FreeNet Hub preview shows an installed R37 interface, not the current public R53 release or live connection health. See each project's README and catalog for status, attribution and current release evidence.*
 
 ## Explore the work
 
