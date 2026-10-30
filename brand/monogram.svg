@@ -1,18 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="TandemVector Labs geometric cyan and blue vector emblem"><title>TandemVector Labs — vector mark</title><desc>Two geometrical connected vectors in cyan and electric blue</desc><defs>
-<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#020914"/><stop offset=".52" stop-color="#05162a"/><stop offset="1" stop-color="#03101d"/></linearGradient>
-<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#11e8e7"/><stop offset=".48" stop-color="#0ca9e9"/><stop offset="1" stop-color="#197bff"/></linearGradient>
-<linearGradient id="light" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#44fff0"/><stop offset=".5" stop-color="#0ddbe8"/><stop offset="1" stop-color="#0077fa"/></linearGradient>
-<radialGradient id="halo"><stop stop-color="#087fff" stop-opacity=".22"/><stop offset=".42" stop-color="#04b4d9" stop-opacity=".10"/><stop offset="1" stop-color="#00e0fa" stop-opacity="0"/></radialGradient>
-<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#2a9dd0" opacity=".45"/></pattern>
-<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#187ab7" stroke-opacity=".25" stroke-width=".7"/></pattern>
-<clipPath id="frame"><rect width="1600" height="520" rx="17"/></clipPath>
-</defs><rect width="512" height="512" rx="68" fill="url(#bg)"/><g transform="translate(8 22) scale(1.03)">
-<ellipse cx="235" cy="221" rx="228" ry="226" fill="url(#halo)"/>
-<g fill="none" stroke="#1579bb" stroke-opacity=".56"><circle cx="235" cy="220" r="207" stroke-width="2"/><circle cx="235" cy="220" r="174" stroke-width="1.5" stroke-dasharray="168 17 46 38"/><circle cx="235" cy="220" r="125" stroke-width="1" stroke-dasharray="101 24"/></g>
-<path d="M98 114H362L272 233L226 165H134Z" fill="url(#light)"/>
-<path d="M201 165L272 233L334 145L400 245L344 328L295 259L249 334L205 260L147 337L111 284Z" fill="url(#edge)"/>
-<path d="M147 337L226 220L307 338H404L371 383H259L204 296L175 367Z" fill="#078ef1" opacity=".93"/>
-<path d="M48 170H161L178 193H48" fill="#19d5ed"/><path d="M335 332H438V349H329Z" fill="#1586fa"/>
-<circle cx="40" cy="181" r="23" fill="#33f4f0"/><circle cx="441" cy="342" r="24" fill="#1ba9ff"/>
-<circle cx="40" cy="181" r="8" fill="#c6ffff" opacity=".68"/><circle cx="441" cy="342" r="7" fill="#a8dfff" opacity=".62"/>
-</g><rect x="12" y="12" width="488" height="488" rx="62" fill="none" stroke="#1579bb" stroke-opacity=".28" stroke-width="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="TandemVector Labs, interlocking T and V monogram"><defs><linearGradient id="cyan" gradientUnits="userSpaceOnUse" x1="110" y1="110" x2="360" y2="292"><stop stop-color="#5cf8eb"/><stop offset=".46" stop-color="#1c9cf7"/><stop offset="1" stop-color="#4263f5"/></linearGradient><linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#28e4e2"/><stop offset=".53" stop-color="#2f79f5"/><stop offset="1" stop-color="#9a60f7"/></linearGradient><linearGradient id="orbit" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#18d8e6"/><stop offset=".55" stop-color="#397af9"/><stop offset="1" stop-color="#b96bfc"/></linearGradient></defs><title>TandemVector Labs — interlocking T and V mark</title><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M122 137H358" stroke="url(#cyan)" stroke-width="55"/><path d="M240 137V292" stroke="url(#cyan)" stroke-width="54"/><path d="M113 219L237 371L365 218" stroke="url(#violet)" stroke-width="55"/><path d="M100 328C156 398 295 407 391 285" stroke="url(#orbit)" stroke-width="17"/><path d="M122 112H344" stroke="#cffdfc" stroke-opacity=".47" stroke-width="4"/></g></svg>
