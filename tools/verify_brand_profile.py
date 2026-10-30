@@ -155,7 +155,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
 
     previews = sorted((brand / "social").glob("*.png"), key=lambda p: p.name)
     require([p.name for p in previews] == sorted(EXPECTED_PREVIEWS), "SOCIAL_PREVIEW_SET")
-    pngs = [(brand / "avatar.png", (384, 384))]
+    pngs = [(brand / "avatar.png", (512, 512))]
     pngs.extend((x, (1280, 640)) for x in previews)
     for file, dims in pngs:
         require(file.is_file(), "PNG_FILE_MISSING")
@@ -177,7 +177,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         else:
             require(relative_file(profile, src, root).is_file(), "PROFILE_IMAGE_NOT_FILE")
         sources.append(src)
-    require("../brand/banner.svg" in sources, "BANNER_NOT_EMBEDDED")
+    require("../brand/banner-approved-20261030.webp" in sources, "BANNER_NOT_EMBEDDED")
     require(sum(x.startswith("https://avatars.githubusercontent.com/u/") for x in sources) == 2,
             "COOWNER_AVATAR_COUNT")
 
