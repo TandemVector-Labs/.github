@@ -19,6 +19,17 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 
 > **Brand:** TandemVector Labs · **Current GitHub namespace:** `TandemVector-Labs`. The organization URL was aligned with its displayed brand on 2026-10-20. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
 
+### Featured public projects
+
+| | |
+| :--- | :--- |
+| [![Remote Commander Browser — 1774×887 conceptual illustration of a native workflow browser shell](../brand/hero/RemoteCommanderBrowser-hero-20261030.png)](https://github.com/TandemVector-Labs/remote-commander-browser) | [![ChatGPT Remote Commander — 1774×887 conceptual illustration of controlled remote workflows](../brand/hero/ChatGPTRemoteCommander-hero-20261030.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
+| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
+| [![Open Internet Gateway — genuine desktop dashboard preview from an earlier build](../brand/screenshots/OpenInternetGateway-dashboard.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — genuine R37 installed desktop dashboard screenshot](../brand/screenshots/FreeNetHub-R37-dashboard.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
+| **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
+
+*The Remote Commander and Browser covers above are AI-generated **concept illustrations**, not screenshots, verified command results, product endorsements, or evidence of production readiness. These visuals are navigation aids, not GitHub pinned-repository settings or an indication of release acceptance. The OIG preview is a repository screenshot from an earlier build; the FreeNet Hub preview shows an installed R37 interface, not the current public R53 release or live connection health. See each project's README and catalog for status, attribution and current release evidence.*
+
 ### Navigate the portfolio
 
 | Discover | Build & contribute | Check provenance |
@@ -33,17 +44,6 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 | Developer tooling | Desktop experiences | Connectivity and research |
 | :--- | :--- | :--- |
 | Automation workflows, reproducible utilities and engineering infrastructure | Accessible interfaces, desktop software and practical user-focused tools | Reliable networking, technical experimentation and applied R&amp;D |
-
-### Featured public projects
-
-| | |
-| :--- | :--- |
-| [![Remote Commander Browser — 1774×887 conceptual illustration of a native workflow browser shell](../brand/hero/RemoteCommanderBrowser-hero-20261030.png)](https://github.com/TandemVector-Labs/remote-commander-browser) | [![ChatGPT Remote Commander — 1774×887 conceptual illustration of controlled remote workflows](../brand/hero/ChatGPTRemoteCommander-hero-20261030.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
-| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
-| [![Open Internet Gateway — genuine desktop dashboard preview from an earlier build](../brand/screenshots/OpenInternetGateway-dashboard.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — genuine R37 installed desktop dashboard screenshot](../brand/screenshots/FreeNetHub-R37-dashboard.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
-| **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
-
-*The Remote Commander and Browser covers above are AI-generated **concept illustrations**, not screenshots, verified command results, product endorsements, or evidence of production readiness. These visuals are navigation aids, not GitHub pinned-repository settings or an indication of release acceptance. The OIG preview is a repository screenshot from an earlier build; the FreeNet Hub preview shows an installed R37 interface, not the current public R53 release or live connection health. See each project's README and catalog for status, attribution and current release evidence.*
 
 ## Explore the work
 
