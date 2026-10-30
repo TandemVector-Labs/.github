@@ -186,7 +186,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         else:
             require(relative_file(profile, src, root).is_file(), "PROFILE_IMAGE_NOT_FILE")
         sources.append(src)
-    require("../brand/banner-approved-20261030.webp" in sources, "BANNER_NOT_EMBEDDED")
+    require("../brand/banner.svg" in sources, "BANNER_NOT_EMBEDDED")
     require(sum(x.startswith("https://avatars.githubusercontent.com/u/") for x in sources) == 2,
             "COOWNER_AVATAR_COUNT")
 
