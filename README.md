@@ -27,8 +27,8 @@ GitHub inherits supported default community files from this public `.github` rep
 The organization profile uses the original **owner-approved TandemVector Labs** artwork. The files below distinguish current profile graphics, earlier scalable artwork, conceptual project covers and genuine product screenshots:
 
 - [Scalable brand mark](brand/monogram.svg) (SVG)
-- [Approved organization profile banner](brand/banner-approved-20261030.webp) (WebP, 1440 × 480; used by the [public profile](profile/README.md))
-- [Earlier scalable banner](brand/banner.svg) (SVG, 1600 × 520; retained, not the current profile header)
+- [Current vector profile banner](brand/banner.svg) (SVG, 1600 × 520; used in the [organization profile](profile/README.md))
+- [Preserved previously approved banner](brand/banner-approved-20261030.webp) (WebP, 1440 × 480; retained without changes)
 - [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; GitHub account-settings upload remains a separate step)
 
 <p align="center"><img src="brand/avatar.png" alt="TandemVector Labs — approved organization avatar" width="160"></p>
