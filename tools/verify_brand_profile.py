@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import html.parser
+import hashlib
 import json
 from pathlib import Path, PureWindowsPath
 import re
@@ -33,6 +34,10 @@ EXPECTED_PREVIEWS = (
 FEATURED_SCREENSHOTS = {
     "OpenInternetGateway": ("../brand/screenshots/OpenInternetGateway-dashboard.png", (1180, 760)),
     "FreeNetHub": ("../brand/screenshots/FreeNetHub-R37-dashboard.png", (1440, 1020)),
+}
+FEATURED_HERO = {
+    "ChatGPTRemoteCommander": ("../brand/hero/ChatGPTRemoteCommander-hero-20261030.png", (1774, 887), "846c64417f06bd47de9ecbbd3cc689ff45d19d1c"),
+    "remote-commander-browser": ("../brand/hero/RemoteCommanderBrowser-hero-20261030.png", (1774, 887), "be93df7c2165ad452d76424548e9441b000ba01a"),
 }
 CARD_RE = re.compile(r"\[!\[([^\]]+)\]\(([^)]+)\)\]\((https://github\.com/[^)]+)\)")
 MD_LINK_RE = re.compile(r"!?\[[^\]]+\]\(([^)]+)\)")
@@ -72,8 +77,8 @@ def relative_file(from_doc: Path, path: str, root: Path) -> Path:
     return full
 
 
-def png_size(data: bytes) -> tuple[int, int]:
-    require(len(data) <= 1_000_000, "PNG_TOO_LARGE")
+def png_size(data: bytes, max_bytes: int = 1_000_000) -> tuple[int, int]:
+    require(len(data) <= max_bytes, "PNG_TOO_LARGE")
     require(data.startswith(b"\x89PNG\r\n\x1a\n"), "PNG_SIGNATURE")
     offset = 8
     dimensions = None
@@ -194,7 +199,10 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         slug = target.removeprefix("https://github.com/TandemVector-Labs/")
         require(slug in {"OpenInternetGateway", "FreeNetHub", "remote-commander-browser", "ChatGPTRemoteCommander"},
                 "FEATURED_UNKNOWN_TARGET")
-        if slug in FEATURED_SCREENSHOTS:
+        approved_blob = None
+        if slug in FEATURED_HERO:
+            expected_path, dimensions, approved_blob = FEATURED_HERO[slug]
+        elif slug in FEATURED_SCREENSHOTS:
             expected_path, dimensions = FEATURED_SCREENSHOTS[slug]
         else:
             expected_path, dimensions = f"../brand/social/{slug}.png", (1280, 640)
@@ -202,7 +210,12 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         require(path == expected_path, "FEATURED_IMG_NOT_CANONICAL")
         img = relative_file(profile, path, root)
         require(img.is_file(), "FEATURED_IMG_NOT_LOCAL")
-        require(png_size(img.read_bytes()) == dimensions, "FEATURED_IMG_DIMENSIONS")
+        payload = img.read_bytes()
+        require(png_size(payload, max_bytes=2_100_000 if approved_blob else 1_000_000) == dimensions,
+                "FEATURED_IMG_DIMENSIONS")
+        if approved_blob:
+            actual_blob = hashlib.sha1(f"blob {len(payload)}\0".encode("ascii") + payload).hexdigest()
+            require(actual_blob == approved_blob, "FEATURED_HERO_BYTES_CHANGED")
         feature_images.add(path)
     require(len(feature_images) == 4, "FEATURED_IMAGE_REPEATED")
 
