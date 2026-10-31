@@ -152,6 +152,11 @@ def iter_links(text: str) -> list[str]:
 
 
 def audit(root: Path = ROOT) -> dict[str, object]:
+    guide = (root / "README.md").read_text(encoding="utf-8")
+    require("[Current approved profile banner](brand/banner-approved-20261030.webp)" in guide,
+            "CURRENT_BANNER_GUIDE_MISMATCH")
+    require("[Source vector banner](brand/banner.svg)" in guide,
+            "VECTOR_BANNER_GUIDE_MISMATCH")
     brand = root / "brand"
     profile = root / "profile/README.md"
     require(profile.is_file(), "ORG_PROFILE_MISSING")
