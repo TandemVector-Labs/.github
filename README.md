@@ -41,7 +41,7 @@ The [organization profile](profile/README.md) uses [Remote Commander Browser](br
 
 ## Repository social preview artwork
 
-Eight optional, original **1280 × 640 PNG** designs (each **under 1 MB**) coordinate with the organization banner. They are stored as reusable artwork, **not automatically applied as repository Social previews**. A repository administrator must select the appropriate PNG under the relevant repository's **Settings → Social preview → Edit → Upload an image** once the asset is published and independent account-setting access is available. Check the public link card afterward.
+Eight optional, original **1280 × 640 PNG** designs (each **under 1 MB**) coordinate with the organization banner. The **Remote Commander Browser** and **ChatGPT Remote Commander** Social Preview cards use full-color 1280 × 640 reductions of the owner-approved 1774 × 887 illustrated covers (Lanczos resampling; respectively 945,015 and 937,573 bytes); their full-resolution originals remain in [`brand/hero/`](brand/hero/). They are stored as reusable artwork, **not automatically applied as repository Social previews**. A repository administrator must select the appropriate PNG under the relevant repository's **Settings → Social preview → Edit → Upload an image** once the asset is published and independent account-setting access is available. Check the public link card afterward.
 
 | Project | Preview | Intended destinations |
 | --- | --- | --- |
