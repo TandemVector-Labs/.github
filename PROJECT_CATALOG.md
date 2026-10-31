@@ -9,11 +9,11 @@ This is a **navigation and provenance catalog**, not a blanket statement that ev
 | Project | Repository | Issues | Published releases | Status |
 | --- | --- | --- | --- | --- |
 | Remote Commander Browser | [Code](https://github.com/TandemVector-Labs/remote-commander-browser) | [Issues](https://github.com/TandemVector-Labs/remote-commander-browser/issues) | [Release history](https://github.com/TandemVector-Labs/remote-commander-browser/releases) | Unofficial CEF browser; preview/candidate and stable claims must be checked per release |
-| Appearance Studio Core | [Code](https://github.com/TandemVector-Labs/AppearanceStudio-Core) | [Issues](https://github.com/TandemVector-Labs/AppearanceStudio-Core/issues) | [v0.9.0-rc1](https://github.com/TandemVector-Labs/AppearanceStudio-Core/releases/tag/v0.9.0-rc1) | Public Linux/GNOME prerelease, not product FINAL. Original organization project; license reserves modification/redistribution rights. Release archive SHA verified; default branch protection **PASS** (active ruleset `25137480` prevents deletion and non-fast-forward updates, with no bypass). |
+| Appearance Studio Core | [Code](https://github.com/TandemVector-Labs/AppearanceStudio-Core) | [Issues](https://github.com/TandemVector-Labs/AppearanceStudio-Core/issues) | [v0.9.1 RC1](https://github.com/TandemVector-Labs/AppearanceStudio-Core/releases/tag/v0.9.1-rc1-tandemvector) | Public Linux/GNOME prerelease, not product FINAL. Original organization project; license reserves modification/redistribution rights. Release archive SHA verified; default branch protection **PASS** (active ruleset `25137480` prevents deletion and non-fast-forward updates, with no bypass). |
 
 Remote Commander Browser is a distinct desktop browser project. It is **not** the Remote Commander MCP server and is not affiliated with or endorsed by OpenAI.
 
-Appearance Studio Core's own README identifies its individual authorship by Dr. Emadoddin and the Arclenor Technologies product brand. Listing it in the shared organization does **not** imply joint authorship, transferred ownership, stable-release acceptance, or a shipped Windows product; consult its own repository for licensing and verified release status.
+Appearance Studio Core's own README attributes its individual authorship to **Aliakbar Emadoddin**. Listing it in the shared organization does **not** imply joint authorship, transferred ownership, stable-release acceptance, or a shipped Windows product; consult the [project's release history](https://github.com/TandemVector-Labs/AppearanceStudio-Core/releases) for the latest published prerelease and licensing terms.
 
 ## Public first-party source repositories and organization forks
 
