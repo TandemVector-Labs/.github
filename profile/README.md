@@ -1,6 +1,6 @@
 <!-- Public TandemVector Labs profile; no private projects or unreleased artwork. -->
 <p align="center">
-  <img src="../brand/banner.svg" alt="TandemVector Labs — building reliable systems together" width="100%" />
+  <img src="../brand/banner-approved-20261030.webp" alt="TandemVector Labs — engineering, software and research, with the approved blue brand mark" width="100%" />
 </p>
 
 <p align="center">

@@ -174,6 +174,18 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     for file, dims in pngs:
         require(file.is_file(), "PNG_FILE_MISSING")
         require(png_size(file.read_bytes()) == dims, "PNG_DIMENSIONS:" + file.name)
+    # Verify the already-approved raster banner independently of the display markup.
+    banner_payload = (brand / "banner-approved-20261030.webp").read_bytes()
+    require(10_000 < len(banner_payload) < 200_000, "BANNER_WEBP_SIZE")
+    require(banner_payload[:4] == b"RIFF" and banner_payload[8:12] == b"WEBP", "BANNER_WEBP_SIGNATURE")
+    require(int.from_bytes(banner_payload[4:8], "little") + 8 == len(banner_payload),
+            "BANNER_WEBP_RIFF_LENGTH")
+    require(banner_payload[12:16] in (b"VP8 ", b"VP8L", b"VP8X"), "BANNER_WEBP_PAYLOAD")
+    banner_blob = hashlib.sha1(
+        f"blob {len(banner_payload)}\0".encode("ascii") + banner_payload
+    ).hexdigest()
+    require(banner_blob == "0b55a3f7bc49163e16f065e3240a0fe241dbb5ee",
+            "BANNER_NOT_APPROVED_BLOB")
     for filename in ("banner.svg", "monogram.svg"):
         file = brand / filename
         require(file.is_file(), "SVG_FILE_MISSING:" + filename)
@@ -191,7 +203,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         else:
             require(relative_file(profile, src, root).is_file(), "PROFILE_IMAGE_NOT_FILE")
         sources.append(src)
-    require("../brand/banner.svg" in sources, "BANNER_NOT_EMBEDDED")
+    require(sources.count("../brand/banner-approved-20261030.webp") == 1, "APPROVED_BANNER_NOT_EMBEDDED")
     require(sum(x.startswith("https://avatars.githubusercontent.com/u/") for x in sources) == 2,
             "COOWNER_AVATAR_COUNT")
 
