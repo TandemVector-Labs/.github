@@ -29,11 +29,11 @@ The organization profile uses the original **owner-approved TandemVector Labs** 
 - [Scalable brand mark](brand/monogram.svg) (SVG)
 - [Current vector profile banner](brand/banner.svg) (SVG, 1600 × 520; used in the [organization profile](profile/README.md))
 - [Preserved previously approved banner](brand/banner-approved-20261030.webp) (WebP, 1440 × 480; retained without changes)
-- [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; rasterized from [the canonical SVG mark](brand/monogram.svg); GitHub account-settings upload remains a separate step)
+- [Approved organization avatar](brand/avatar.png) (PNG, 512 × 512; rasterized from [the canonical SVG mark](brand/monogram.svg); matching GitHub organization account avatar was separately owner-uploaded and public-verified on 2026-10-30)
 
 <p align="center"><img src="brand/avatar.png" alt="TandemVector Labs — approved organization avatar" width="160"></p>
 
-**Usage boundaries:** This original artwork represents a shared project and collaboration identity—not a registered company, cleared trademark, verified domain, completed product release, or third-party endorsement. The current namespace remains `TandemVector-Labs`; these assets do not rename the organization. Publishing `brand/avatar.png` does **not** set the GitHub account avatar: an organization owner must separately apply it in organization profile settings. Keep private repositories, secrets and unlicensed content out of the public profile.
+**Usage boundaries:** This original artwork represents a shared project and collaboration identity—not a registered company, cleared trademark, verified domain, completed product release, or third-party endorsement. The current namespace remains `TandemVector-Labs`; these assets do not rename the organization. Updating `brand/avatar.png` in this repository does **not** automatically update the GitHub account avatar. The approved version was separately uploaded in the organization owner's authenticated Settings on 2026-10-30 and independently checked on the public avatar CDN; any future change must be applied and verified there separately. Keep private repositories, secrets and unlicensed content out of the public profile.
 
 ## Featured project visuals
 
