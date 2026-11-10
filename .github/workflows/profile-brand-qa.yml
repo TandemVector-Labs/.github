@@ -1,13 +1,7 @@
 name: Profile and brand integrity
 
 on:
-  pull_request:
-    paths:
-      - "**/*.md"
-      - "brand/**"
-      - "profile/**"
-      - "tools/verify_brand_profile.py"
-      - ".github/workflows/profile-brand-qa.yml"
+  pull_request: {}
   push:
     branches:
       - "brand/tandemvector-profile"
