@@ -39,6 +39,17 @@ FEATURED_HERO = {
     "ChatGPTRemoteCommander": ("../brand/hero/ChatGPTRemoteCommander-hero-20261030.png", (1774, 887), "846c64417f06bd47de9ecbbd3cc689ff45d19d1c"),
     "remote-commander-browser": ("../brand/hero/RemoteCommanderBrowser-hero-20261030.png", (1774, 887), "be93df7c2165ad452d76424548e9441b000ba01a"),
 }
+FEATURED_TARGETS = {
+    "remote-commander-browser": "https://github.com/GOD13emad/remote-commander-browser",
+    "ChatGPTRemoteCommander": "https://github.com/TandemVector-Labs/ChatGPTRemoteCommander",
+    "OpenInternetGateway": "https://github.com/TandemVector-Labs/OpenInternetGateway",
+    "FreeNetHub": "https://github.com/TandemVector-Labs/FreeNetHub",
+}
+def featured_target_allowed(target: str) -> bool:
+    slug = target.rsplit("/", 1)[-1]
+    return FEATURED_TARGETS.get(slug) == target
+
+
 CARD_RE = re.compile(r"\[!\[([^\]]+)\]\(([^)]+)\)\]\((https://github\.com/[^)]+)\)")
 MD_LINK_RE = re.compile(r"!?\[[^\]]+\]\(([^)]+)\)")
 FENCE = chr(96) * 3
@@ -217,8 +228,8 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     feature_images = set()
     for alt, path, target in featured:
         require(alt.strip(), "FEATURED_IMG_ALT_EMPTY")
-        require(target.startswith("https://github.com/TandemVector-Labs/"), "FEATURED_TARGET_NOT_ORG")
-        slug = target.removeprefix("https://github.com/TandemVector-Labs/")
+        slug = target.rsplit("/", 1)[-1]
+        require(featured_target_allowed(target), "FEATURED_TARGET_NOT_APPROVED")
         require(slug in {"OpenInternetGateway", "FreeNetHub", "remote-commander-browser", "ChatGPTRemoteCommander"},
                 "FEATURED_UNKNOWN_TARGET")
         approved_blob = None
@@ -311,7 +322,16 @@ def self_test() -> None:
     ]
     require([p.name for p in sorted(mixed_case, key=lambda p: p.name)] ==
             sorted(p.name for p in mixed_case), "TEST_PORTABLE_PREVIEW_ORDER")
-    print(json.dumps({"selftest": "PASS", "cases": 9}, sort_keys=True))
+    require(featured_target_allowed(
+            "https://github.com/GOD13emad/remote-commander-browser"),
+            "TEST_PERSONAL_BROWSER_TARGET")
+    require(not featured_target_allowed(
+            "https://github.com/GOD13emad/FreeNetHub"),
+            "TEST_BROWSER_TARGET_MISMATCH")
+    require(not featured_target_allowed(
+            "https://github.com/TandemVector-Labs/remote-commander-browser"),
+            "TEST_STALE_BROWSER_TARGET")
+    print(json.dumps({"selftest": "PASS", "cases": 12}, sort_keys=True))
 
 
 if __name__ == "__main__":
