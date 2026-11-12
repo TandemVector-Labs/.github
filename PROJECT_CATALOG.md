@@ -4,7 +4,7 @@
 
 This is a **navigation and provenance catalog**, not a blanket statement that every product is stable, actively supported, licensed for reuse, or accepted for release. The repositories have different authors, histories, maintainers, and quality gates.
 
-## Projects originating in this organization
+## Independent personal-source projects with organization collaboration forks
 
 | Project | Repository | Issues | Published releases | Status |
 | --- | --- | --- | --- | --- |
