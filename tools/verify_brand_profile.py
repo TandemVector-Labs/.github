@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import html.parser
+import hashlib
 import json
 from pathlib import Path, PureWindowsPath
 import re
@@ -30,6 +31,68 @@ EXPECTED_PREVIEWS = (
     "TaskbarMonitorEnhanced.png",
     "remote-commander-browser.png",
 )
+FEATURED_SCREENSHOTS = {
+    "OpenInternetGateway": ("../brand/screenshots/OpenInternetGateway-dashboard.png", (1180, 760)),
+    "FreeNetHub": ("../brand/screenshots/FreeNetHub-R37-dashboard.png", (1440, 1020)),
+}
+FEATURED_HERO = {
+    "ChatGPTRemoteCommander": ("../brand/hero/ChatGPTRemoteCommander-hero-20261030.png", (1774, 887), "846c64417f06bd47de9ecbbd3cc689ff45d19d1c"),
+    "remote-commander-browser": ("../brand/hero/RemoteCommanderBrowser-hero-20261030.png", (1774, 887), "be93df7c2165ad452d76424548e9441b000ba01a"),
+}
+FEATURED_TARGETS = {
+    "remote-commander-browser": "https://github.com/GOD13emad/remote-commander-browser",
+    "ChatGPTRemoteCommander": "https://github.com/TandemVector-Labs/ChatGPTRemoteCommander",
+    "OpenInternetGateway": "https://github.com/TandemVector-Labs/OpenInternetGateway",
+    "FreeNetHub": "https://github.com/TandemVector-Labs/FreeNetHub",
+}
+OWNER_AVATAR_IDENTITIES = {
+    "https://avatars.githubusercontent.com/u/94546844?v=4": "GOD13emad",
+    "https://avatars.githubusercontent.com/u/332195122?v=4": "MMZ",
+}
+
+
+def coowner_avatars_valid(images: list[tuple[str, str]]) -> bool:
+    # Match both the exact GitHub account image and its descriptive owner label.
+    # Counting arbitrary githubusercontent avatar URLs cannot prove co-owner identity.
+    external = [(src, alt) for src, alt in images if src.startswith("https://")]
+    return len(external) == len(OWNER_AVATAR_IDENTITIES) and all(
+        src in OWNER_AVATAR_IDENTITIES
+        and alt.strip().startswith(OWNER_AVATAR_IDENTITIES[src] + " ")
+        for src, alt in external
+    ) and {src for src, _ in external} == set(OWNER_AVATAR_IDENTITIES)
+
+
+def catalog_provenance_valid(text: str) -> bool:
+    """Ensure personal originals never become mislabeled as organization-created."""
+    heading = "## Independent personal-source projects with organization collaboration forks"
+    if text.count(heading) != 1 or "## Projects originating in this organization" in text:
+        return False
+    originals = {
+        "Remote Commander Browser": "remote-commander-browser",
+        "Appearance Studio Core": "AppearanceStudio-Core",
+    }
+    for title, slug in originals.items():
+        rows = [line for line in text.splitlines() if line.startswith(f"| {title} |")]
+        if len(rows) != 1:
+            return False
+        row = rows[0]
+        original = f"https://github.com/GOD13emad/{slug}"
+        fork = f"https://github.com/TandemVector-Labs/{slug}-fork"
+        if not all((
+            f"[Code]({original})" in row,
+            f"[Issues]({original}/issues)" in row,
+            f"]({fork})" in row,
+            original + "/releases" in row,
+        )):
+            return False
+    return True
+
+
+def featured_target_allowed(target: str) -> bool:
+    slug = target.rsplit("/", 1)[-1]
+    return FEATURED_TARGETS.get(slug) == target
+
+
 CARD_RE = re.compile(r"\[!\[([^\]]+)\]\(([^)]+)\)\]\((https://github\.com/[^)]+)\)")
 MD_LINK_RE = re.compile(r"!?\[[^\]]+\]\(([^)]+)\)")
 FENCE = chr(96) * 3
@@ -68,8 +131,8 @@ def relative_file(from_doc: Path, path: str, root: Path) -> Path:
     return full
 
 
-def png_size(data: bytes) -> tuple[int, int]:
-    require(len(data) <= 1_000_000, "PNG_TOO_LARGE")
+def png_size(data: bytes, max_bytes: int = 1_000_000) -> tuple[int, int]:
+    require(len(data) <= max_bytes, "PNG_TOO_LARGE")
     require(data.startswith(b"\x89PNG\r\n\x1a\n"), "PNG_SIGNATURE")
     offset = 8
     dimensions = None
@@ -143,10 +206,17 @@ def iter_links(text: str) -> list[str]:
 
 
 def audit(root: Path = ROOT) -> dict[str, object]:
+    guide = (root / "README.md").read_text(encoding="utf-8")
+    require("[Current approved profile banner](brand/banner-approved-20261030.webp)" in guide,
+            "CURRENT_BANNER_GUIDE_MISMATCH")
+    require("[Source vector banner](brand/banner.svg)" in guide,
+            "VECTOR_BANNER_GUIDE_MISMATCH")
     brand = root / "brand"
     profile = root / "profile/README.md"
     require(profile.is_file(), "ORG_PROFILE_MISSING")
     profile_text = profile.read_text(encoding="utf-8")
+    catalog_text = (root / "PROJECT_CATALOG.md").read_text(encoding="utf-8")
+    require(catalog_provenance_valid(catalog_text), "CATALOG_PERSONAL_PROVENANCE")
     require("TandemVector Labs" in profile_text, "BRAND_IDENTITY_MISSING")
     require("TandemVector-Labs" in profile_text, "CURRENT_NAMESPACE_MISSING")
     require("not a claim of registered company status" in profile_text, "BRAND_STATUS_CAVEAT_MISSING")
@@ -155,11 +225,28 @@ def audit(root: Path = ROOT) -> dict[str, object]:
 
     previews = sorted((brand / "social").glob("*.png"), key=lambda p: p.name)
     require([p.name for p in previews] == sorted(EXPECTED_PREVIEWS), "SOCIAL_PREVIEW_SET")
-    pngs = [(brand / "avatar.png", (384, 384))]
+    pngs = [(brand / "avatar.png", (512, 512))]
+    avatar_file = brand / "avatar.png"
+    require(avatar_file.is_file(), "PNG_FILE_MISSING")
+    avatar = avatar_file.read_bytes()
+    approved_avatar_blob = hashlib.sha1(f"blob {len(avatar)}\0".encode("ascii") + avatar).hexdigest()
+    require(approved_avatar_blob == "296408af322c2c22d9265749b113946db5f17c6a", "AVATAR_NOT_APPROVED_BLOB")
     pngs.extend((x, (1280, 640)) for x in previews)
     for file, dims in pngs:
         require(file.is_file(), "PNG_FILE_MISSING")
         require(png_size(file.read_bytes()) == dims, "PNG_DIMENSIONS:" + file.name)
+    # Verify the already-approved raster banner independently of the display markup.
+    banner_payload = (brand / "banner-approved-20261030.webp").read_bytes()
+    require(10_000 < len(banner_payload) < 200_000, "BANNER_WEBP_SIZE")
+    require(banner_payload[:4] == b"RIFF" and banner_payload[8:12] == b"WEBP", "BANNER_WEBP_SIGNATURE")
+    require(int.from_bytes(banner_payload[4:8], "little") + 8 == len(banner_payload),
+            "BANNER_WEBP_RIFF_LENGTH")
+    require(banner_payload[12:16] in (b"VP8 ", b"VP8L", b"VP8X"), "BANNER_WEBP_PAYLOAD")
+    banner_blob = hashlib.sha1(
+        f"blob {len(banner_payload)}\0".encode("ascii") + banner_payload
+    ).hexdigest()
+    require(banner_blob == "0b55a3f7bc49163e16f065e3240a0fe241dbb5ee",
+            "BANNER_NOT_APPROVED_BLOB")
     for filename in ("banner.svg", "monogram.svg"):
         file = brand / filename
         require(file.is_file(), "SVG_FILE_MISSING:" + filename)
@@ -177,20 +264,40 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         else:
             require(relative_file(profile, src, root).is_file(), "PROFILE_IMAGE_NOT_FILE")
         sources.append(src)
-    require("../brand/banner.svg" in sources, "BANNER_NOT_EMBEDDED")
+    require(sources.count("../brand/banner-approved-20261030.webp") == 1, "APPROVED_BANNER_NOT_EMBEDDED")
     require(sum(x.startswith("https://avatars.githubusercontent.com/u/") for x in sources) == 2,
             "COOWNER_AVATAR_COUNT")
+    require(coowner_avatars_valid([
+        (img.get("src", ""), img.get("alt", "")) for img in parser.images
+    ]), "COOWNER_AVATAR_IDENTITY")
 
     featured = CARD_RE.findall(profile_text)
     require(len(featured) == 4, "FEATURED_CARD_COUNT")
     feature_images = set()
     for alt, path, target in featured:
         require(alt.strip(), "FEATURED_IMG_ALT_EMPTY")
-        require(path.startswith("../brand/social/"), "FEATURED_IMAGE_NOT_LOCAL")
+        slug = target.rsplit("/", 1)[-1]
+        require(featured_target_allowed(target), "FEATURED_TARGET_NOT_APPROVED")
+        require(slug in {"OpenInternetGateway", "FreeNetHub", "remote-commander-browser", "ChatGPTRemoteCommander"},
+                "FEATURED_UNKNOWN_TARGET")
+        approved_blob = None
+        if slug in FEATURED_HERO:
+            expected_path, dimensions, approved_blob = FEATURED_HERO[slug]
+        elif slug in FEATURED_SCREENSHOTS:
+            expected_path, dimensions = FEATURED_SCREENSHOTS[slug]
+        else:
+            expected_path, dimensions = f"../brand/social/{slug}.png", (1280, 640)
+            require(f"{slug}.png" in EXPECTED_PREVIEWS, "FEATURED_SOCIAL_UNKNOWN")
+        require(path == expected_path, "FEATURED_IMG_NOT_CANONICAL")
         img = relative_file(profile, path, root)
-        require(img.is_file() and img.name in EXPECTED_PREVIEWS, "FEATURED_IMG_NOT_CANONICAL")
-        require(target.startswith("https://github.com/TandemVector-Labs/"), "FEATURED_TARGET_NOT_ORG")
-        feature_images.add(img.name)
+        require(img.is_file(), "FEATURED_IMG_NOT_LOCAL")
+        payload = img.read_bytes()
+        require(png_size(payload, max_bytes=2_100_000 if approved_blob else 1_000_000) == dimensions,
+                "FEATURED_IMG_DIMENSIONS")
+        if approved_blob:
+            actual_blob = hashlib.sha1(f"blob {len(payload)}\0".encode("ascii") + payload).hexdigest()
+            require(actual_blob == approved_blob, "FEATURED_HERO_BYTES_CHANGED")
+        feature_images.add(path)
     require(len(feature_images) == 4, "FEATURED_IMAGE_REPEATED")
 
     checked, excluded, markdown_count = 0, 0, 0
@@ -263,7 +370,43 @@ def self_test() -> None:
     ]
     require([p.name for p in sorted(mixed_case, key=lambda p: p.name)] ==
             sorted(p.name for p in mixed_case), "TEST_PORTABLE_PREVIEW_ORDER")
-    print(json.dumps({"selftest": "PASS", "cases": 9}, sort_keys=True))
+    require(featured_target_allowed(
+            "https://github.com/GOD13emad/remote-commander-browser"),
+            "TEST_PERSONAL_BROWSER_TARGET")
+    require(not featured_target_allowed(
+            "https://github.com/GOD13emad/FreeNetHub"),
+            "TEST_BROWSER_TARGET_MISMATCH")
+    require(not featured_target_allowed(
+            "https://github.com/TandemVector-Labs/remote-commander-browser"),
+            "TEST_STALE_BROWSER_TARGET")
+    owners = [
+        ("https://avatars.githubusercontent.com/u/94546844?v=4", "GOD13emad GitHub avatar"),
+        ("https://avatars.githubusercontent.com/u/332195122?v=4", "MMZ GitHub avatar"),
+    ]
+    require(coowner_avatars_valid(owners), "TEST_APPROVED_COOWNER_IDENTITIES")
+    require(not coowner_avatars_valid([owners[0], owners[0]]),
+            "TEST_REPEATED_COOWNER_AVATAR_NOT_REJECTED")
+    require(not coowner_avatars_valid([
+        owners[0], ("https://avatars.githubusercontent.com/u/111111?v=4", "MMZ GitHub avatar")
+    ]), "TEST_UNAPPROVED_AVATAR_ID_NOT_REJECTED")
+    require(not coowner_avatars_valid([
+        owners[0], (owners[1][0], "GOD13emad GitHub avatar")
+    ]), "TEST_MISMATCHED_AVATAR_ALT_NOT_REJECTED")
+    catalog = (ROOT / "PROJECT_CATALOG.md").read_text(encoding="utf-8")
+    require(catalog_provenance_valid(catalog), "TEST_VALID_PERSONAL_ORIGINAL_CATALOG")
+    require(not catalog_provenance_valid(catalog.replace(
+        "## Independent personal-source projects with organization collaboration forks",
+        "## Projects originating in this organization", 1)),
+        "TEST_FALSE_ORGANIZATION_ORIGIN_NOT_REJECTED")
+    require(not catalog_provenance_valid(catalog.replace(
+        "https://github.com/TandemVector-Labs/remote-commander-browser-fork",
+        "https://github.com/TandemVector-Labs/remote-commander-browser", 1)),
+        "TEST_STALE_BROWSER_ORGANIZATION_FORK_NOT_REJECTED")
+    require(not catalog_provenance_valid(catalog.replace(
+        "[Code](https://github.com/GOD13emad/AppearanceStudio-Core)",
+        "[Code](https://github.com/TandemVector-Labs/AppearanceStudio-Core)", 1)),
+        "TEST_PERSONAL_APPEARANCE_SOURCE_MISMATCH_NOT_REJECTED")
+    print(json.dumps({"selftest": "PASS", "cases": 20}, sort_keys=True))
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 <!-- Public TandemVector Labs profile; no private projects or unreleased artwork. -->
 <p align="center">
-  <img src="../brand/banner.svg" alt="TandemVector Labs — building reliable systems together" width="100%" />
+  <img src="../brand/banner-approved-20261030.webp" alt="TandemVector Labs — engineering, software and research, with the approved blue brand mark" width="100%" />
 </p>
 
 <p align="center">
@@ -19,6 +19,17 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 
 > **Brand:** TandemVector Labs · **Current GitHub namespace:** `TandemVector-Labs`. The organization URL was aligned with its displayed brand on 2026-10-20. This is a project and collaboration identity, **not a claim of registered company status or trademark clearance**. Each repository has its own licensing and release maturity.
 
+### Featured public projects
+
+| | |
+| :--- | :--- |
+| [![Remote Commander Browser — 1774×887 conceptual illustration of a native workflow browser shell](../brand/hero/RemoteCommanderBrowser-hero-20261030.png)](https://github.com/GOD13emad/remote-commander-browser) | [![ChatGPT Remote Commander — 1774×887 conceptual illustration of controlled remote workflows](../brand/hero/ChatGPTRemoteCommander-hero-20261030.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
+| **[Remote Commander Browser](https://github.com/GOD13emad/remote-commander-browser)** — personal original; [organization fork](https://github.com/TandemVector-Labs/remote-commander-browser-fork); candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
+| [![Open Internet Gateway — genuine desktop dashboard preview from an earlier build](../brand/screenshots/OpenInternetGateway-dashboard.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — genuine R37 installed desktop dashboard screenshot](../brand/screenshots/FreeNetHub-R37-dashboard.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
+| **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
+
+*The Remote Commander and Browser covers above are AI-generated **concept illustrations**, not screenshots, verified command results, product endorsements, or evidence of production readiness. These visuals are navigation aids, not GitHub pinned-repository settings or an indication of release acceptance. The OIG preview is a repository screenshot from an earlier build; the FreeNet Hub preview shows an installed R37 interface, not the current public R53 release or live connection health. See each project's README and catalog for status, attribution and current release evidence.*
+
 ### Navigate the portfolio
 
 | Discover | Build & contribute | Check provenance |
@@ -34,37 +45,28 @@ TandemVector Labs is a **jointly operated technical collective**, not the person
 | :--- | :--- | :--- |
 | Automation workflows, reproducible utilities and engineering infrastructure | Accessible interfaces, desktop software and practical user-focused tools | Reliable networking, technical experimentation and applied R&amp;D |
 
-### Featured public projects
-
-| | |
-| :--- | :--- |
-| [![Remote Commander Browser — CEF desktop browser shell](../brand/social/remote-commander-browser.png)](https://github.com/TandemVector-Labs/remote-commander-browser) | [![ChatGPT Remote Commander — permission-aware MCP tooling](../brand/social/ChatGPTRemoteCommander.png)](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) |
-| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** — organization-origin project; candidate-stage software | **[ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/ChatGPTRemoteCommander) |
-| [![Open Internet Gateway — cross-platform connectivity](../brand/social/OpenInternetGateway.png)](https://github.com/TandemVector-Labs/OpenInternetGateway) | [![FreeNet Hub — connectivity desktop tools](../brand/social/FreeNetHub.png)](https://github.com/TandemVector-Labs/FreeNetHub) |
-| **[Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/OpenInternetGateway) | **[FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub)** — organization fork; [personal upstream and releases](https://github.com/GOD13emad/FreeNetHub) |
-
-*These visual cards are a navigation aid, not GitHub pinned-repository settings or an indication of release acceptance. See each project's README and the directory below for current status and attribution.*
-
 ## Explore the work
 
 Browse the [complete public project directory](https://github.com/TandemVector-Labs/.github/blob/main/PROJECT_CATALOG.md) for verified upstream links, release locations, issue reporting and status boundaries.
 
 
-### Original projects hosted in this organization
+### Featured independent projects and personal upstreams
 
 | Project | Focus | Status |
 | --- | --- | --- |
-| **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
-| **[Appearance Studio Core](https://github.com/TandemVector-Labs/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
+| **[Remote Commander Browser](https://github.com/GOD13emad/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
+| **[Appearance Studio Core](https://github.com/GOD13emad/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.1 RC1 prerelease** ([published GNOME release](https://github.com/GOD13emad/AppearanceStudio-Core/releases/tag/v0.9.1-rc1-tandemvector)), GNOME 50 live acceptance still pending; no shipped Windows version claimed |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
 ### Public forks of contributor-owned projects
 
-These are **GitHub forks inside this organization**. The personal repositories remain the **upstream sources**; they have not been transferred or deleted. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
+These are **GitHub forks inside this organization**. The personal repositories are the **upstream sources**. Appearance Studio Core and Remote Commander Browser were transferred to Aliakbar's personal ownership with their histories and releases preserved. Their former organization URLs remain working redirects; each new organization fork uses a distinct name. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
 
 | Organization repository | Original upstream | Focus |
 | --- | --- | --- |
+| [Appearance Studio Core (organization fork)](https://github.com/TandemVector-Labs/AppearanceStudio-Core-fork) | [Aliakbar personal original](https://github.com/GOD13emad/AppearanceStudio-Core) | Linux/GNOME appearance tooling; official releases remain upstream |
+| [Remote Commander Browser (organization fork)](https://github.com/TandemVector-Labs/remote-commander-browser-fork) | [Aliakbar personal original](https://github.com/GOD13emad/remote-commander-browser) | Independent Windows/Linux CEF browser; release candidates remain at personal upstream |
 | [ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) | [Source](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Permission-aware Windows/Linux MCP and project workflows |
 | [Direct Internet Method](https://github.com/TandemVector-Labs/DirectInternetMethod) | [Source](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking |
 | [FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
