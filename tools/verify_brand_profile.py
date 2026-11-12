@@ -45,6 +45,23 @@ FEATURED_TARGETS = {
     "OpenInternetGateway": "https://github.com/TandemVector-Labs/OpenInternetGateway",
     "FreeNetHub": "https://github.com/TandemVector-Labs/FreeNetHub",
 }
+OWNER_AVATAR_IDENTITIES = {
+    "https://avatars.githubusercontent.com/u/94546844?v=4": "GOD13emad",
+    "https://avatars.githubusercontent.com/u/332195122?v=4": "MMZ",
+}
+
+
+def coowner_avatars_valid(images: list[tuple[str, str]]) -> bool:
+    # Match both the exact GitHub account image and its descriptive owner label.
+    # Counting arbitrary githubusercontent avatar URLs cannot prove co-owner identity.
+    external = [(src, alt) for src, alt in images if src.startswith("https://")]
+    return len(external) == len(OWNER_AVATAR_IDENTITIES) and all(
+        src in OWNER_AVATAR_IDENTITIES
+        and alt.strip().startswith(OWNER_AVATAR_IDENTITIES[src] + " ")
+        for src, alt in external
+    ) and {src for src, _ in external} == set(OWNER_AVATAR_IDENTITIES)
+
+
 def featured_target_allowed(target: str) -> bool:
     slug = target.rsplit("/", 1)[-1]
     return FEATURED_TARGETS.get(slug) == target
@@ -222,6 +239,9 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     require(sources.count("../brand/banner-approved-20261030.webp") == 1, "APPROVED_BANNER_NOT_EMBEDDED")
     require(sum(x.startswith("https://avatars.githubusercontent.com/u/") for x in sources) == 2,
             "COOWNER_AVATAR_COUNT")
+    require(coowner_avatars_valid([
+        (img.get("src", ""), img.get("alt", "")) for img in parser.images
+    ]), "COOWNER_AVATAR_IDENTITY")
 
     featured = CARD_RE.findall(profile_text)
     require(len(featured) == 4, "FEATURED_CARD_COUNT")
@@ -331,7 +351,20 @@ def self_test() -> None:
     require(not featured_target_allowed(
             "https://github.com/TandemVector-Labs/remote-commander-browser"),
             "TEST_STALE_BROWSER_TARGET")
-    print(json.dumps({"selftest": "PASS", "cases": 12}, sort_keys=True))
+    owners = [
+        ("https://avatars.githubusercontent.com/u/94546844?v=4", "GOD13emad GitHub avatar"),
+        ("https://avatars.githubusercontent.com/u/332195122?v=4", "MMZ GitHub avatar"),
+    ]
+    require(coowner_avatars_valid(owners), "TEST_APPROVED_COOWNER_IDENTITIES")
+    require(not coowner_avatars_valid([owners[0], owners[0]]),
+            "TEST_REPEATED_COOWNER_AVATAR_NOT_REJECTED")
+    require(not coowner_avatars_valid([
+        owners[0], ("https://avatars.githubusercontent.com/u/111111?v=4", "MMZ GitHub avatar")
+    ]), "TEST_UNAPPROVED_AVATAR_ID_NOT_REJECTED")
+    require(not coowner_avatars_valid([
+        owners[0], (owners[1][0], "GOD13emad GitHub avatar")
+    ]), "TEST_MISMATCHED_AVATAR_ALT_NOT_REJECTED")
+    print(json.dumps({"selftest": "PASS", "cases": 16}, sort_keys=True))
 
 
 if __name__ == "__main__":
