@@ -142,6 +142,15 @@ def iter_links(text: str) -> list[str]:
     return urls
 
 
+def featured_target_allowed(image_name: str, target: str) -> bool:
+    # Preserve the existing organization links, allowing only the exact verified
+    # personally-owned browser upstream for its own image card after transfer.
+    return target.startswith("https://github.com/TandemVector-Labs/") or (
+        image_name == "remote-commander-browser.png"
+        and target == "https://github.com/GOD13emad/remote-commander-browser"
+    )
+
+
 def audit(root: Path = ROOT) -> dict[str, object]:
     brand = root / "brand"
     profile = root / "profile/README.md"
@@ -189,7 +198,7 @@ def audit(root: Path = ROOT) -> dict[str, object]:
         require(path.startswith("../brand/social/"), "FEATURED_IMAGE_NOT_LOCAL")
         img = relative_file(profile, path, root)
         require(img.is_file() and img.name in EXPECTED_PREVIEWS, "FEATURED_IMG_NOT_CANONICAL")
-        require(target.startswith("https://github.com/TandemVector-Labs/"), "FEATURED_TARGET_NOT_ORG")
+        require(featured_target_allowed(img.name, target), "FEATURED_TARGET_NOT_APPROVED")
         feature_images.add(img.name)
     require(len(feature_images) == 4, "FEATURED_IMAGE_REPEATED")
 
@@ -263,7 +272,17 @@ def self_test() -> None:
     ]
     require([p.name for p in sorted(mixed_case, key=lambda p: p.name)] ==
             sorted(p.name for p in mixed_case), "TEST_PORTABLE_PREVIEW_ORDER")
-    print(json.dumps({"selftest": "PASS", "cases": 9}, sort_keys=True))
+    require(featured_target_allowed(
+        "remote-commander-browser.png",
+        "https://github.com/GOD13emad/remote-commander-browser"
+    ), "TEST_PERSONAL_BROWSER_UPSTREAM")
+    require(not featured_target_allowed(
+        "FreeNetHub.png", "https://github.com/GOD13emad/remote-commander-browser"
+    ), "TEST_BROWSER_IDENTITY_MISMATCH")
+    require(not featured_target_allowed(
+        "remote-commander-browser.png", "https://github.com/GOD13emad/other"
+    ), "TEST_UNEXPECTED_PERSONAL_TARGET")
+    print(json.dumps({"selftest": "PASS", "cases": 12}, sort_keys=True))
 
 
 if __name__ == "__main__":
