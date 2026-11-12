@@ -55,16 +55,17 @@ Browse the [complete public project directory](https://github.com/TandemVector-L
 | Project | Focus | Status |
 | --- | --- | --- |
 | **[Remote Commander Browser](https://github.com/TandemVector-Labs/remote-commander-browser)** | Unofficial Chromium Embedded Framework (CEF) desktop browser shell, with native tabs, Persian/Arabic RTL support, and narrowly scoped permissions | **Candidate-stage**; refer to its own README and releases for verified details |
-| **[Appearance Studio Core](https://github.com/TandemVector-Labs/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
+| **[Appearance Studio Core](https://github.com/GOD13emad/AppearanceStudio-Core)** | Linux/GNOME appearance tooling, Theme Packs and transactional rollback; written by Dr. Emadoddin under the distinct **Arclenor Technologies** product identity | **v0.9.0 release candidate**, GNOME 50 live acceptance still pending; no shipped Windows version claimed |
 
 Remote Commander Browser is a **separate project** from the Remote Commander MCP server. It is not an official OpenAI or ChatGPT desktop application.
 
 ### Public forks of contributor-owned projects
 
-These are **GitHub forks inside this organization**. The personal repositories remain the **upstream sources**; they have not been transferred or deleted. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
+These are **GitHub forks inside this organization**. The personal repositories are the **upstream sources**. Appearance Studio Core was transferred to Aliakbar's personal ownership with its history and releases preserved; the former organization URL remains a redirect, and its organization fork has a distinct name. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
 
 | Organization repository | Original upstream | Focus |
 | --- | --- | --- |
+| [Appearance Studio Core (organization fork)](https://github.com/TandemVector-Labs/AppearanceStudio-Core-fork) | [Aliakbar personal original](https://github.com/GOD13emad/AppearanceStudio-Core) | Linux/GNOME appearance tooling; official releases remain upstream |
 | [ChatGPT Remote Commander](https://github.com/TandemVector-Labs/ChatGPTRemoteCommander) | [Source](https://github.com/GOD13emad/ChatGPTRemoteCommander) | Permission-aware Windows/Linux MCP and project workflows |
 | [Direct Internet Method](https://github.com/TandemVector-Labs/DirectInternetMethod) | [Source](https://github.com/GOD13emad/DirectInternetMethod) | Windows/Linux direct-connect networking |
 | [FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
