@@ -62,6 +62,32 @@ def coowner_avatars_valid(images: list[tuple[str, str]]) -> bool:
     ) and {src for src, _ in external} == set(OWNER_AVATAR_IDENTITIES)
 
 
+def catalog_provenance_valid(text: str) -> bool:
+    """Ensure personal originals never become mislabeled as organization-created."""
+    heading = "## Independent personal-source projects with organization collaboration forks"
+    if text.count(heading) != 1 or "## Projects originating in this organization" in text:
+        return False
+    originals = {
+        "Remote Commander Browser": "remote-commander-browser",
+        "Appearance Studio Core": "AppearanceStudio-Core",
+    }
+    for title, slug in originals.items():
+        rows = [line for line in text.splitlines() if line.startswith(f"| {title} |")]
+        if len(rows) != 1:
+            return False
+        row = rows[0]
+        original = f"https://github.com/GOD13emad/{slug}"
+        fork = f"https://github.com/TandemVector-Labs/{slug}-fork"
+        if not all((
+            f"[Code]({original})" in row,
+            f"[Issues]({original}/issues)" in row,
+            f"]({fork})" in row,
+            original + "/releases" in row,
+        )):
+            return False
+    return True
+
+
 def featured_target_allowed(target: str) -> bool:
     slug = target.rsplit("/", 1)[-1]
     return FEATURED_TARGETS.get(slug) == target
@@ -189,6 +215,8 @@ def audit(root: Path = ROOT) -> dict[str, object]:
     profile = root / "profile/README.md"
     require(profile.is_file(), "ORG_PROFILE_MISSING")
     profile_text = profile.read_text(encoding="utf-8")
+    catalog_text = (root / "PROJECT_CATALOG.md").read_text(encoding="utf-8")
+    require(catalog_provenance_valid(catalog_text), "CATALOG_PERSONAL_PROVENANCE")
     require("TandemVector Labs" in profile_text, "BRAND_IDENTITY_MISSING")
     require("TandemVector-Labs" in profile_text, "CURRENT_NAMESPACE_MISSING")
     require("not a claim of registered company status" in profile_text, "BRAND_STATUS_CAVEAT_MISSING")
@@ -364,7 +392,21 @@ def self_test() -> None:
     require(not coowner_avatars_valid([
         owners[0], (owners[1][0], "GOD13emad GitHub avatar")
     ]), "TEST_MISMATCHED_AVATAR_ALT_NOT_REJECTED")
-    print(json.dumps({"selftest": "PASS", "cases": 16}, sort_keys=True))
+    catalog = (ROOT / "PROJECT_CATALOG.md").read_text(encoding="utf-8")
+    require(catalog_provenance_valid(catalog), "TEST_VALID_PERSONAL_ORIGINAL_CATALOG")
+    require(not catalog_provenance_valid(catalog.replace(
+        "## Independent personal-source projects with organization collaboration forks",
+        "## Projects originating in this organization", 1)),
+        "TEST_FALSE_ORGANIZATION_ORIGIN_NOT_REJECTED")
+    require(not catalog_provenance_valid(catalog.replace(
+        "https://github.com/TandemVector-Labs/remote-commander-browser-fork",
+        "https://github.com/TandemVector-Labs/remote-commander-browser", 1)),
+        "TEST_STALE_BROWSER_ORGANIZATION_FORK_NOT_REJECTED")
+    require(not catalog_provenance_valid(catalog.replace(
+        "[Code](https://github.com/GOD13emad/AppearanceStudio-Core)",
+        "[Code](https://github.com/TandemVector-Labs/AppearanceStudio-Core)", 1)),
+        "TEST_PERSONAL_APPEARANCE_SOURCE_MISMATCH_NOT_REJECTED")
+    print(json.dumps({"selftest": "PASS", "cases": 20}, sort_keys=True))
 
 
 if __name__ == "__main__":
