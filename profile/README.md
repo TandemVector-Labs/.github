@@ -74,7 +74,7 @@ These are **GitHub forks inside this organization**. The personal repositories a
 | [Taskbar Monitor Enhanced](https://github.com/TandemVector-Labs/TaskbarMonitorEnhanced) | [Source](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar and hardware monitoring |
 | [Persian Word Agent](https://github.com/TandemVector-Labs/PersianWordAgent) | [Source](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
 
-**Joint development routing:** New PRs and new issue reports for **all six original-contributor forks listed above** go to their shared organization repositories; see [Shared development home](https://github.com/TandemVector-Labs/.github/blob/main/COLLABORATION_HOME.md). Personal repositories remain the original GitHub fork parents and currently host existing releases and updater endpoints. Forks are not a full transfer of historic GitHub Issues, PRs, releases, Wikis, settings, or CI secrets; do not assume automatic syncing. Legacy third-party fork chains retain their original upstream routing.
+**Contribution routing:** Before submitting PRs or issues, follow the currently published [Governance](https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md) and [Shared development home](https://github.com/TandemVector-Labs/.github/blob/main/COLLABORATION_HOME.md); an unmerged policy proposal is not yet in force. Organization forks remain shared review, integration QA and issue-coordination locations, while personal upstreams retain source history and existing release/updater authority. Forks are not a full transfer of historic GitHub Issues, PRs, releases, Wikis, settings or CI secrets; do not assume automatic syncing. Legacy third-party fork chains retain their original routing.
 
 ### Legacy third-party fork lineage
 
@@ -118,7 +118,7 @@ Both owners share administration within the organization, but this does **not** 
 
 این مجموعه برای معرفی و توسعه ابزارهای مهندسی، نرم‌افزارهای کاربردی و گردش‌کارهای فنیِ قابل بازتولید ایجاد شده است. هر پروژه مستندات، سطح بلوغ، شرایط مجوز و الزامات امنیتی مخصوص خود را دارد.
 
-هشت پروژه عمومی در قالب **Fork** به سازمان اضافه شده‌اند. **توسعه مشترک و ثبت مشکل جدید شش پروژهٔ اصلی در مخازن سازمانی انجام می‌شود**؛ مخازن شخصی آن‌ها فعلاً محل انتشار نسخه‌های رسمی و لینک‌های به‌روزرسانی هستند. Forkهای شخص ثالث طبق راهنمای منبع اصلی مدیریت می‌شوند و همگام‌سازی خودکار همه سرویس‌های GitHub تضمین نشده است. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
+هشت پروژهٔ عمومی در قالب **Fork** به سازمان اضافه شده‌اند. برای ثبت PR و Issue، نسخهٔ منتشرشدهٔ [سیاست راهبری](https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md) و [راهنمای همکاری](https://github.com/TandemVector-Labs/.github/blob/main/COLLABORATION_HOME.md) ملاک است؛ پیشنهادهای Mergeنشده هنوز سیاست اجرایی نیستند. مخازن سازمانی بستر بازبینی، آزمون یکپارچه و هماهنگی Issue هستند و مخازن اصلی شخصی تاریخچهٔ منبع و اختیار فعلی انتشار و به‌روزرسانی را حفظ می‌کنند. Forkهای شخص ثالث از راهنمای منبع اصلی پیروی می‌کنند و همگام‌سازی همهٔ سرویس‌های GitHub خودکار نیست. **مخازن خصوصی بدون بررسی مجوز و سطح دسترسی منتشر نمی‌شوند.**
 
 ## Independence and trademarks
 
