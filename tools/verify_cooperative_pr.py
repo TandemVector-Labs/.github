@@ -58,10 +58,23 @@ def api(endpoint, pages=False):
     return json.loads(subprocess.check_output(cmd, text=True, timeout=60))
 
 
+def live_source_ref(pr):
+    source = pr["head"]
+    repo = source.get("repo")
+    if not isinstance(repo, dict) or not REPO.fullmatch(repo.get("full_name") or ""):
+        raise ValueError("source repository unavailable")
+    ref = source.get("ref")
+    if not isinstance(ref, str) or not ref:
+        raise ValueError("source branch unavailable")
+    return (repo["full_name"], ref,
+            api("repos/" + repo["full_name"] + "/git/ref/heads/" + quote(ref, safe=""))["object"]["sha"])
+
+
 def inspect(args):
     root = "repos/" + args.repo
     pr_path = root + "/pulls/" + str(args.pr)
     p = api(pr_path)
+    source_before = live_source_ref(p)
     branch_path = root + "/branches/" + quote(p["base"]["ref"], safe="")
     b = api(branch_path)["commit"]["sha"]
     run_pages = api(root + "/commits/" + args.head + "/check-runs?filter=latest&per_page=100", True)
@@ -70,7 +83,12 @@ def inspect(args):
     # These are observations, not an atomic server-side admission transaction.
     p2 = api(pr_path)
     b2 = api(branch_path)["commit"]["sha"]
-    return assess(p, b, runs, reviews, args.head, args.base, args.check, args.reviewer, p2, b2)
+    source_after = live_source_ref(p2)
+    result = assess(p, b, runs, reviews, args.head, args.base, args.check, args.reviewer, p2, b2)
+    if source_before != source_after or source_before[2] != args.head:
+        result["issues"].append("LIVE_SOURCE_REF_CHANGED_OR_UNEXPECTED")
+        result["result"] = "BLOCKED"
+    return result
 
 
 class ContractTests(unittest.TestCase):
@@ -107,6 +125,38 @@ class ContractTests(unittest.TestCase):
     def test_head_race(self):
         self.assertIn("PR_CHANGED_DURING_READ",self.gate(final_pr=dict(self.p,head={"sha":self.b}))["issues"])
     def test_unknown_mergeability(self): self.p["mergeable"]=None; self.assertEqual(self.gate()["result"],"BLOCKED")
+    def test_inspect_live_source_ref(self):
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        pr = dict(self.p, head={"sha": self.h, "ref": "qa/topic", "repo": {"full_name": "peer/fork"}})
+        args = SimpleNamespace(repo="owner/repo", pr=1, head=self.h, base=self.b, check=[(1, "test")], reviewer="peer")
+        def run(source_shas):
+            reads = iter(source_shas)
+            def fake_api(endpoint, pages=False):
+                if endpoint == "repos/peer/fork/git/ref/heads/qa%2Ftopic":
+                    return {"object": {"sha": next(reads)}}
+                if endpoint.endswith("/pulls/1"): return pr
+                if "/branches/" in endpoint: return {"commit": {"sha": self.b}}
+                if "/check-runs?" in endpoint: return [{"check_runs": self.c}]
+                if "/reviews?" in endpoint: return [self.r]
+                raise AssertionError(endpoint)
+            with patch(__name__ + ".api", side_effect=fake_api):
+                return inspect(args)
+        self.assertEqual(run([self.h, self.h])["result"], "METADATA_PASS_HUMAN_CONFIRMATION_REQUIRED")
+        for refs in ([self.b, self.b], [self.h, self.b]):
+            result = run(refs)
+            self.assertEqual(result["result"], "BLOCKED")
+            self.assertIn("LIVE_SOURCE_REF_CHANGED_OR_UNEXPECTED", result["issues"])
+            self.assertFalse(result["merge_authorized"])
+
+    def test_missing_source_repository(self):
+        with self.assertRaises(ValueError):
+            live_source_ref({"head": {"repo": None, "ref": "topic"}})
+
+    def test_missing_source_branch(self):
+        with self.assertRaises(ValueError):
+            live_source_ref({"head": {"repo": {"full_name": "peer/fork"}, "ref": ""}})
+
     def test_review_bot(self): self.r[0]["user"]["type"]="Bot"; self.assertEqual(self.gate()["result"],"BLOCKED")
 
 
