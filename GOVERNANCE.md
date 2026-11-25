@@ -22,6 +22,10 @@ Never claim stable release status based solely on a successful build, GitHub wor
 - Never silently rewrite provenance, force-push, disable security controls or automatically promote candidate builds.
 - Route new issues to the project-specific accepted tracker; existing organization issue intake for the six first-party forks remains available for shared coordination, with links to the canonical personal source issue or PR where applicable. Do not duplicate or silently move issue history.
 
+## Cooperative review when server enforcement is unavailable
+
+Keep private repositories private. Where the current plan cannot enforce branch protection, use an agreed project-specific check list with trusted app IDs, exact source/base SHAs, review records and independent human disposition. `python3 tools/verify_cooperative_pr.py --self-test` tests the generic read-only verifier; run it with `OWNER/REPO PR --head HEAD_SHA --base BASE_SHA --reviewer LOGIN --check APP_ID:CHECK_NAME` (repeat checks as needed). Missing, stale, skipped or failed checks and unresolved requested changes block the metadata check. The check policy must be agreed before inspection, not selected from whichever checks passed. Even a metadata pass requires genuine independent human confirmation, review-thread disposition and fresh ref readback; it never authorizes merge or replaces server enforcement. No workflow or paid service is enabled by this verifier. Keep private outputs in the authorized private context.
+
 ## Changes and evidence
 
 Record reason, affected namespace/repositories, old and new values, SHA/commit identifiers, checks, risk, restoration path and unresolved gates. After significant governance changes, update the portable organization Project Brain.
