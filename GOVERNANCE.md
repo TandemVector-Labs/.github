@@ -10,7 +10,7 @@ Major decisions (organization handle, ownership, member permissions, private rep
 
 ## Source authority and release status
 
-The six original-contributor organization forks listed in [Shared development home](COLLABORATION_HOME.md) are the designated **shared development, PR review and new issue intake locations** for both Owners, as described in [Shared GitHub development home](COLLABORATION_HOME.md). Their personal upstream GitHub repositories remain the Git source-lineage parents and the **existing publication/updater authority** until a separately reviewed release migration is accepted. Third-party fork chains retain their project-specific upstream routing and original authorship. A matching Git commit proves code parity at that commit; it does not prove parity of Issues, pull requests, Releases, Wiki, GitHub Actions, packages, secrets, branch policies or product acceptance.
+**Personal-first source policy (2026-11-25).** For first-party projects with a verified personal upstream, the personal repository is the canonical source-development and existing publication/updater authority. The matching organization fork is the shared collaboration, review, integration QA and coordination surface. The earlier organization-first direction dated 2026-10-15 is retained in Git history as provenance, not the default for new work. Preserve already-active organization branches and unique commits, and reconcile them by reviewed ancestry-preserving PRs; do not recreate repositories, change ownership, transfer private material or change release endpoints under this policy alone. For organization-origin projects or other ownership arrangements, confirm the accepted project-specific source authority before any migration. Third-party projects retain their original license, maintainers and upstream routing. A matching Git commit proves code parity at that commit, not service-data or product acceptance parity.
 
 Never claim stable release status based solely on a successful build, GitHub workflow run or copied tag. Keep each project's raw test evidence, Project Brain, release notes, licenses and version history authoritative for that project.
 
@@ -20,7 +20,7 @@ Never claim stable release status based solely on a successful build, GitHub wor
 - Keep two-person owner recovery viable; require owners to enable 2FA before enforcing organization-wide 2FA, to prevent involuntary access lockout.
 - Prefer reviewable PRs, appropriately scoped permissions, verified status checks, secret scanning and documented rollback.
 - Never silently rewrite provenance, force-push, disable security controls or automatically promote candidate builds.
-- Route new issues for the six designated jointly developed first-party projects to their **organization** issue trackers. For all other forks follow project-specific active upstream guidance; do not assume GitHub fork ancestry determines the location of new team work.
+- Route new issues to the project-specific accepted tracker; existing organization issue intake for the six first-party forks remains available for shared coordination, with links to the canonical personal source issue or PR where applicable. Do not duplicate or silently move issue history.
 
 ## Changes and evidence
 
