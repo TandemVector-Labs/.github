@@ -17,7 +17,7 @@ Appearance Studio Core's own README attributes its individual authorship to **Al
 
 ## Public first-party source repositories and organization forks
 
-The source repositories below remain the original Git parents and current **official release locations**. However, **new development PRs and new issue reports** for **all six original-contributor forks in the table below** are now routed to their jointly administered organization repositories (see [Shared development home](COLLABORATION_HOME.md)). The legacy third-party fork chains remain under their upstream maintainer guidance. Forks do not automatically replicate existing Issues, PRs, release objects/assets, Wikis, package registries or CI secrets.
+The source repositories below remain the original Git parents and current **official release locations**. For **development PRs and new issue reports** across the six original-contributor projects below, follow the currently published [Governance](GOVERNANCE.md) and [Shared development home](COLLABORATION_HOME.md). The organization repositories are shared collaboration locations; a proposed routing change is not active until accepted. The legacy third-party fork chains remain under their upstream maintainer guidance. Forks do not automatically replicate existing Issues, PRs, release objects/assets, Wikis, package registries or CI secrets.
 
 | Domain / project | Organization repository | Original Git parent | Existing releases | New issue routing |
 | --- | --- | --- | --- | --- |
@@ -53,4 +53,4 @@ External licenses, usage conditions, credits and upstream security advisories go
 
 ## فارسی
 
-TandemVector Labs یک مجموعه فنی مشترک برای مهندسی، نرم‌افزار و پژوهش است. مخازن Fork سازمان به‌معنای انتقال مالکیت کامل پروژه، انتشار نسخه پایدار یا کپی تمام اطلاعات GitHub نیستند. برای شش پروژهٔ اصلی، مخازن شخصی منبع اصلی کد و انتشار نسخه‌ها هستند؛ PRهای توسعهٔ مشترک و گزارش مشکلات جدید در Forkهای سازمانی ثبت و بررسی می‌شوند. انتشارها همچنان از مخازن شخصی اصلی دریافت می‌شوند. برای Forkهای شخص ثالث طبق راهنمای نگهدارنده اقدام کنید. رعایت محرمانگی مخازن خصوصی و ذکر منبع پروژه‌های شخص ثالث الزامی است.
+TandemVector Labs یک مجموعه فنی مشترک برای مهندسی، نرم‌افزار و پژوهش است. مخازن Fork سازمان به‌معنای انتقال مالکیت کامل پروژه، انتشار نسخه پایدار یا کپی تمام اطلاعات GitHub نیستند. برای شش پروژهٔ اصلی، مخازن شخصی منبع اصلی کد و انتشار نسخه‌ها هستند؛ مسیر PRهای توسعه و گزارش مشکلات جدید مطابق [حاکمیت](GOVERNANCE.md) و [راهنمای همکاری مشترک](COLLABORATION_HOME.md) منتشرشده تعیین می‌شود؛ پیشنهاد تغییر مسیر تا زمان پذیرش معتبر نیست. انتشارها همچنان از مخازن شخصی اصلی دریافت می‌شوند. برای Forkهای شخص ثالث طبق راهنمای نگهدارنده اقدام کنید. رعایت محرمانگی مخازن خصوصی و ذکر منبع پروژه‌های شخص ثالث الزامی است.
