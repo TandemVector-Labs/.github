@@ -61,7 +61,7 @@ Remote Commander Browser is a **separate project** from the Remote Commander MCP
 
 ### Public forks of contributor-owned projects
 
-These are **GitHub forks inside this organization**. The personal repositories are the **upstream sources**. Appearance Studio Core and Remote Commander Browser were transferred to Aliakbar's personal ownership with their histories and releases preserved. Their former organization URLs remain working redirects; each new organization fork uses a distinct name. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
+These are **GitHub forks inside this organization**. The personal repositories are the **original upstream repositories**; public availability does not necessarily include source code. Appearance Studio Core and Remote Commander Browser were transferred to Aliakbar's personal ownership with their histories and releases preserved. Their former organization URLs remain working redirects; each new organization fork uses a distinct name. Fork commit parity is a point-in-time property, not a guarantee of continuous synchronization; verify current refs before relying on a fork for release or integration work.
 
 | Organization repository | Original upstream | Focus |
 | --- | --- | --- |
@@ -72,7 +72,7 @@ These are **GitHub forks inside this organization**. The personal repositories a
 | [FreeNet Hub](https://github.com/TandemVector-Labs/FreeNetHub) | [Source](https://github.com/GOD13emad/FreeNetHub) | Desktop connectivity tools |
 | [Open Internet Gateway](https://github.com/TandemVector-Labs/OpenInternetGateway) | [Source](https://github.com/GOD13emad/OpenInternetGateway) | Cross-platform, self-healing network gateway |
 | [Taskbar Monitor Enhanced](https://github.com/TandemVector-Labs/TaskbarMonitorEnhanced) | [Source](https://github.com/GOD13emad/TaskbarMonitorEnhanced) | Windows taskbar and hardware monitoring |
-| [Persian Word Agent](https://github.com/TandemVector-Labs/PersianWordAgent) | [Source](https://github.com/GOD13emad/PersianWordAgent) | Persian-language Microsoft Word assistance |
+| [Persian Word Agent](https://github.com/TandemVector-Labs/PersianWordAgent) | [Official binary distribution](https://github.com/GOD13emad/PersianWordAgent) | Windows Persian-language Microsoft Word assistance; no public source code |
 
 **Contribution routing:** Before submitting PRs or issues, follow the currently published [Governance](https://github.com/TandemVector-Labs/.github/blob/main/GOVERNANCE.md) and [Shared development home](https://github.com/TandemVector-Labs/.github/blob/main/COLLABORATION_HOME.md); an unmerged policy proposal is not yet in force. Organization forks remain shared review, integration QA and issue-coordination locations, while personal upstreams retain source history and existing release/updater authority. Forks are not a full transfer of historic GitHub Issues, PRs, releases, Wikis, settings or CI secrets; do not assume automatic syncing. Legacy third-party fork chains retain their original routing.
 
