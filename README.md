@@ -51,7 +51,7 @@ Eight optional, original **1280 × 640 PNG** designs (each **under 1 MB**) coord
 | FreeNet Hub | [PNG](brand/social/FreeNetHub.png) | Personal authoritative source and organization fork |
 | Direct Internet Method | [PNG](brand/social/DirectInternetMethod.png) | Personal authoritative source and organization fork |
 | Taskbar Monitor Enhanced | [PNG](brand/social/TaskbarMonitorEnhanced.png) | Personal authoritative source and organization fork |
-| Persian Word Agent | [PNG](brand/social/PersianWordAgent.png) | Personal authoritative source and organization fork |
+| Persian Word Agent | [PNG](brand/social/PersianWordAgent.png) | Personal binary-distribution repository and organization collaboration fork |
 | Appearance Studio Core | [PNG](brand/social/AppearanceStudio-Core.png) | Organization original |
 
 **Boundaries:** These previews do not imply official affiliation, stable release status, ownership transfer, author approval, license changes or active maintenance. Legacy third-party forks, transfer staging and private repositories have no branded social preview in this pack. Preserve existing repo-specific imagery when it better represents the project and its upstream authorship.
