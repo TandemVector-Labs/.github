@@ -13,6 +13,13 @@ REPO = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 LOGIN = re.compile(r"^[A-Za-z0-9-]+$")
 
 
+def valid_repo(value):
+    if not isinstance(value, str) or not REPO.fullmatch(value):
+        return False
+    owner, name = value.split("/", 1)
+    return owner not in {".", ".."} and name not in {".", ".."}
+
+
 def assess(pr, branch, runs, reviews, head, base, checks, reviewer, final_pr, final_branch):
     issues = []
     def need(condition, reason):
@@ -61,7 +68,7 @@ def api(endpoint, pages=False):
 def live_source_ref(pr):
     source = pr["head"]
     repo = source.get("repo")
-    if not isinstance(repo, dict) or not REPO.fullmatch(repo.get("full_name") or ""):
+    if not isinstance(repo, dict) or not valid_repo(repo.get("full_name") or ""):
         raise ValueError("source repository unavailable")
     ref = source.get("ref")
     if not isinstance(ref, str) or not ref:
@@ -149,6 +156,12 @@ class ContractTests(unittest.TestCase):
             self.assertIn("LIVE_SOURCE_REF_CHANGED_OR_UNEXPECTED", result["issues"])
             self.assertFalse(result["merge_authorized"])
 
+    def test_repo_path_segments(self):
+        self.assertTrue(valid_repo("TandemVector-Labs/.github"))
+        for value in ("owner/..", "../repo", "owner/."):
+            with self.subTest(value=value):
+                self.assertFalse(valid_repo(value))
+
     def test_missing_source_repository(self):
         with self.assertRaises(ValueError):
             live_source_ref({"head": {"repo": None, "ref": "topic"}})
@@ -179,7 +192,7 @@ def main():
     parser.add_argument("--reviewer",required=True)
     parser.add_argument("--check",type=check_arg,action="append",required=True)
     a=parser.parse_args()
-    if not REPO.fullmatch(a.repo) or a.pr<1 or not SHA.fullmatch(a.head) or not SHA.fullmatch(a.base) or not LOGIN.fullmatch(a.reviewer) or len(set(a.check))!=len(a.check):
+    if not valid_repo(a.repo) or a.pr<1 or not SHA.fullmatch(a.head) or not SHA.fullmatch(a.base) or not LOGIN.fullmatch(a.reviewer) or len(set(a.check))!=len(a.check):
         parser.error("invalid or duplicate scope input")
     try:
         r=inspect(a)
