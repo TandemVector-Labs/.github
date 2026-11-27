@@ -139,6 +139,9 @@ def png_size(data: bytes, max_bytes: int = 1_000_000) -> tuple[int, int]:
     first = True
     ended = False
     chunks = 0
+    idat_bytes = 0
+    idat_seen = False
+    idat_closed = False
     while offset < len(data):
         require(offset + 12 <= len(data), "PNG_TRUNCATED_CHUNK")
         size = struct.unpack(">I", data[offset : offset + 4])[0]
@@ -154,6 +157,14 @@ def png_size(data: bytes, max_bytes: int = 1_000_000) -> tuple[int, int]:
             require(width > 0 and height > 0, "PNG_BAD_DIMENSIONS")
             dimensions = (width, height)
             first = False
+        else:
+            require(kind != b"IHDR", "PNG_DUPLICATE_IHDR")
+        if kind == b"IDAT":
+            require(not idat_closed, "PNG_NONCONSECUTIVE_IDAT")
+            idat_seen = True
+            idat_bytes += size
+        elif idat_seen:
+            idat_closed = True
         if kind == b"IEND":
             require(size == 0, "PNG_BAD_IEND")
             ended = True
@@ -162,6 +173,7 @@ def png_size(data: bytes, max_bytes: int = 1_000_000) -> tuple[int, int]:
         chunks += 1
         require(chunks < 5000, "PNG_CHUNK_LIMIT")
     require(ended and dimensions is not None, "PNG_NO_IEND")
+    require(idat_bytes > 0, "PNG_NO_IMAGE_DATA")
     return dimensions
 
 
@@ -337,6 +349,24 @@ def self_test() -> None:
         b"IDAT", zlib.compress(b"\x00\x00\x00\x00\xff")
     ) + chunk(b"IEND", b"")
     require(png_size(png) == (1, 1), "TEST_VALID_PNG")
+    # CRC and dimensions alone cannot establish that the image contains pixels.
+    sig = b"\x89PNG\r\n\x1a\n"
+    header = chunk(b"IHDR", ihdr)
+    image = chunk(b"IDAT", zlib.compress(b"\x00\x00\x00\x00\xff"))
+    end = chunk(b"IEND", b"")
+    for candidate, code in (
+        (sig + header + end, "PNG_NO_IMAGE_DATA"),
+        (sig + header + chunk(b"IDAT", b"") + end, "PNG_NO_IMAGE_DATA"),
+        (sig + header + header + image + end, "PNG_DUPLICATE_IHDR"),
+        (sig + header + image + chunk(b"tEXt", b"note\x00ok") + image + end,
+         "PNG_NONCONSECUTIVE_IDAT"),
+    ):
+        try:
+            png_size(candidate)
+        except AuditError as exc:
+            require(str(exc) == code, "TEST_UNEXPECTED_PNG_ERROR")
+        else:
+            raise AssertionError("MALFORMED_PNG_NOT_REJECTED:" + code)
     bad = bytearray(png)
     bad[-6] ^= 1
     try:
@@ -406,7 +436,7 @@ def self_test() -> None:
         "[Code](https://github.com/GOD13emad/AppearanceStudio-Core)",
         "[Code](https://github.com/TandemVector-Labs/AppearanceStudio-Core)", 1)),
         "TEST_PERSONAL_APPEARANCE_SOURCE_MISMATCH_NOT_REJECTED")
-    print(json.dumps({"selftest": "PASS", "cases": 20}, sort_keys=True))
+    print(json.dumps({"selftest": "PASS", "cases": 24}, sort_keys=True))
 
 
 if __name__ == "__main__":
