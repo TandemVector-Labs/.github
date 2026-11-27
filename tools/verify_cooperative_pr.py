@@ -77,6 +77,27 @@ def live_source_ref(pr):
             api("repos/" + repo["full_name"] + "/git/ref/heads/" + quote(ref, safe=""))["object"]["sha"])
 
 
+def evidence_snapshot(runs, reviews, checks):
+    """Compare only decision-relevant metadata, independent of API page order."""
+    selected = set(checks)
+    check_rows = []
+    for r in runs:
+        app = (r.get("app") or {}).get("id")
+        if (app, r.get("name")) in selected:
+            check_rows.append([app, r.get("name"), r.get("id"), r.get("head_sha"),
+                               r.get("status"), r.get("conclusion")])
+    review_rows = []
+    for r in reviews:
+        if r.get("state") in {"APPROVED", "CHANGES_REQUESTED", "DISMISSED"}:
+            u = r.get("user") or {}
+            review_rows.append([r.get("id"), u.get("login"), u.get("type"),
+                                r.get("state"), r.get("commit_id"),
+                                r.get("author_association"), r.get("submitted_at")])
+    def canonical(rows):
+        return sorted(json.dumps(row, sort_keys=True) for row in rows)
+    return canonical(check_rows), canonical(review_rows)
+
+
 def inspect(args):
     root = "repos/" + args.repo
     pr_path = root + "/pulls/" + str(args.pr)
@@ -84,14 +105,27 @@ def inspect(args):
     source_before = live_source_ref(p)
     branch_path = root + "/branches/" + quote(p["base"]["ref"], safe="")
     b = api(branch_path)["commit"]["sha"]
-    run_pages = api(root + "/commits/" + args.head + "/check-runs?filter=latest&per_page=100", True)
-    runs = [r for page in run_pages for r in page["check_runs"]]
-    reviews = [r for page in api(pr_path + "/reviews?per_page=100", True) for r in page]
-    # These are observations, not an atomic server-side admission transaction.
+    def read_evidence():
+        run_pages = api(root + "/commits/" + args.head + "/check-runs?filter=latest&per_page=100", True)
+        runs = [r for page in run_pages for r in page["check_runs"]]
+        reviews = [r for page in api(pr_path + "/reviews?per_page=100", True) for r in page]
+        return runs, reviews
+    runs, reviews = read_evidence()
+    first_checks, first_reviews = evidence_snapshot(runs, reviews, args.check)
+    final_runs, final_reviews = read_evidence()
+    final_checks, final_review_rows = evidence_snapshot(final_runs, final_reviews, args.check)
+    # These are repeated observations, not an atomic server-side admission transaction.
     p2 = api(pr_path)
     b2 = api(branch_path)["commit"]["sha"]
     source_after = live_source_ref(p2)
     result = assess(p, b, runs, reviews, args.head, args.base, args.check, args.reviewer, p2, b2)
+    for changed, reason in (
+        (first_checks != final_checks, "CHECK_EVIDENCE_CHANGED_DURING_READ"),
+        (first_reviews != final_review_rows, "REVIEW_EVIDENCE_CHANGED_DURING_READ"),
+    ):
+        if changed:
+            result["issues"].append(reason)
+            result["result"] = "BLOCKED"
     if source_before != source_after or source_before[2] != args.head:
         result["issues"].append("LIVE_SOURCE_REF_CHANGED_OR_UNEXPECTED")
         result["result"] = "BLOCKED"
@@ -155,6 +189,45 @@ class ContractTests(unittest.TestCase):
             self.assertEqual(result["result"], "BLOCKED")
             self.assertIn("LIVE_SOURCE_REF_CHANGED_OR_UNEXPECTED", result["issues"])
             self.assertFalse(result["merge_authorized"])
+
+    def test_evidence_drift(self):
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        pr = dict(self.p, head={"sha": self.h, "ref": "qa/topic", "repo": {"full_name": "peer/fork"}})
+        args = SimpleNamespace(repo="owner/repo", pr=1, head=self.h, base=self.b,
+                               check=[(1, "test")], reviewer="peer")
+        def run(final_runs, final_reviews):
+            checks = iter([self.c, final_runs])
+            reviews = iter([self.r, final_reviews])
+            def fake_api(endpoint, pages=False):
+                if "/git/ref/heads/" in endpoint: return {"object": {"sha": self.h}}
+                if endpoint.endswith("/pulls/1"): return pr
+                if "/branches/" in endpoint: return {"commit": {"sha": self.b}}
+                if "/check-runs?" in endpoint: return [{"check_runs": next(checks)}]
+                if "/reviews?" in endpoint: return [next(reviews)]
+                raise AssertionError(endpoint)
+            with patch(__name__ + ".api", side_effect=fake_api):
+                return inspect(args)
+        stable = run(self.c, self.r)
+        self.assertEqual(stable["result"], "METADATA_PASS_HUMAN_CONFIRMATION_REQUIRED")
+        self.assertFalse(stable["merge_authorized"])
+        for runs, reviews, reason in (
+            (self.c, [dict(self.r[0], state="DISMISSED")], "REVIEW_EVIDENCE_CHANGED_DURING_READ"),
+            (self.c, self.r + [dict(self.r[0], id=2, state="CHANGES_REQUESTED",
+                                    user={"login": "other", "type": "User"})],
+             "REVIEW_EVIDENCE_CHANGED_DURING_READ"),
+            ([dict(self.c[0], conclusion="failure")], self.r, "CHECK_EVIDENCE_CHANGED_DURING_READ"),
+            ([dict(self.c[0], id=3)], self.r, "CHECK_EVIDENCE_CHANGED_DURING_READ"),
+        ):
+            with self.subTest(reason=reason, runs=runs, reviews=reviews):
+                result = run(runs, reviews)
+                self.assertEqual(result["result"], "BLOCKED")
+                self.assertIn(reason, result["issues"])
+                self.assertFalse(result["merge_authorized"])
+        unrelated = dict(self.c[0], name="unrelated")
+        comment = dict(self.r[0], id=3, state="COMMENTED")
+        self.assertEqual(run([unrelated] + self.c, [comment] + self.r)["result"],
+                         "METADATA_PASS_HUMAN_CONFIRMATION_REQUIRED")
 
     def test_repo_path_segments(self):
         self.assertTrue(valid_repo("TandemVector-Labs/.github"))
