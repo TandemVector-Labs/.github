@@ -6,6 +6,7 @@ import re
 import subprocess
 import sys
 import unittest
+from pathlib import Path
 from urllib.parse import quote
 
 SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -132,6 +133,13 @@ def inspect(args):
     return result
 
 
+def unconditional_pr_workflow(document):
+    heading = document.split("\npermissions:", 1)[0]
+    return (bool(re.search(r"(?m)^on:\n  pull_request:\s*$", heading))
+            and not bool(re.search(
+                r"(?m)^\s+(?:paths|paths-ignore|branches|branches-ignore):", heading)))
+
+
 class ContractTests(unittest.TestCase):
     def setUp(self):
         self.h, self.b = "a"*40, "b"*40
@@ -145,6 +153,15 @@ class ContractTests(unittest.TestCase):
                     checks=[(1,"test")],reviewer="peer",final_pr=self.p,final_branch=self.b)
         args.update(overrides)
         return assess(**args)
+    def test_required_cooperative_workflow_is_unfiltered(self):
+        workflow = (Path(__file__).resolve().parent.parent /
+                    ".github/workflows/cooperative-pr-qa.yml").read_text(encoding="utf-8")
+        self.assertTrue(unconditional_pr_workflow(workflow))
+        self.assertFalse(unconditional_pr_workflow(workflow.replace(
+            "  pull_request:\n", "  pull_request:\n    paths:\n      - 'GOVERNANCE.md'\n", 1)))
+        self.assertFalse(unconditional_pr_workflow(workflow.replace(
+            "  pull_request:\n", "  pull_request:\n    branches:\n      - main\n", 1)))
+
     def test_good_metadata_never_authorizes(self):
         r=self.gate(); self.assertEqual(r["result"],"METADATA_PASS_HUMAN_CONFIRMATION_REQUIRED")
         self.assertFalse(r["merge_authorized"]);self.assertFalse(r["server_enforcement"])

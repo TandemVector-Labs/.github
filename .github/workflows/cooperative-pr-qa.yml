@@ -2,9 +2,6 @@ name: Cooperative PR verifier contract
 
 on:
   pull_request:
-    paths:
-      - "tools/verify_cooperative_pr.py"
-      - ".github/workflows/cooperative-pr-qa.yml"
 
 permissions:
   contents: read
