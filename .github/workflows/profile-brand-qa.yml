@@ -11,12 +11,6 @@ on:
   push:
     branches:
       - "brand/tandemvector-profile"
-    paths:
-      - "**/*.md"
-      - "brand/**"
-      - "profile/**"
-      - "tools/verify_brand_profile.py"
-      - ".github/workflows/profile-brand-qa.yml"
 
 permissions:
   contents: read
